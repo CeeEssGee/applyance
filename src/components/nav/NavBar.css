@@ -1,4 +1,4 @@
-/* copied for ApplYances, no tweaks made */
+ /* updated for Applyances */
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -13,4 +13,5 @@
 .navbar__logout {
     margin-left: auto;
 }
+
 

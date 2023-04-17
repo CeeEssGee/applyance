@@ -1,25 +1,19 @@
-// tweaked for ApplYances
-
+//  updated for Applyances
+import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
-import { AdminNav } from "./AdminNav"
-import { FamilyNav } from "./FamilyNav"
 
-
-// Tickets link and logout link + event listener
 export const NavBar = () => {
+    const navigate = useNavigate()
 
-        // get apply user object out of local storage
-        const localApplyUser = localStorage.getItem("apply_user") // a string
-        const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and admin)
-    
-        if (applyUserObject.admin) {
-            // return admin views
-            return <AdminNav />
-        }
-        else {
-            // return family views
-            return <FamilyNav />
-        }
-
+    return (
+        <ul className="navbar">
+            <li className="navbar__item navbar__logout">
+                <Link className="navbar__link" to="" onClick={() => {
+                    localStorage.removeItem("apply_user")
+                    navigate("/", {replace: true})
+                }}>Logout</Link>
+            </li>
+        </ul>
+    )
 }
 
