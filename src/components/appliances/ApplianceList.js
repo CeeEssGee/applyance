@@ -46,9 +46,7 @@ export const ApplianceList = () => {
                         <div>
                             <img src={appliance.picture} />
                         </div>
-                        <div><Link to={appliance.manual}>Link to Manual</Link></div>
-
-
+                        <div className="manualLink"><Link to={appliance.manual}>Link to Manual</Link></div>
                     </section>
                 }
             )

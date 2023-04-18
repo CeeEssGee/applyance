@@ -42,13 +42,23 @@ AdminNavBar
     Updated the link for All ApplYances
 AdminViews
     Added Route for ApplianceLIst
-QUESTION - How can I use Assets in my database instead of trusting that my links will work on Demo Day?
+<!-- Status: We have a page that renders with a picture and link to manual -->
+
+
+
 
 
 
 <!-- TODO's -->
+Flesh out single Appliance.js page
 NavBar.js
     Update links for My ApplYances, Add New ApplYance
+Fix appliances to applyances at the end of the project
+Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
+Create link to show details plus notes for each item
+    <div>Purchase Date: {appliance.purchaseDate}</div>
+    <div>Purchase Price: {appliance.purchasePrice}</div>
+    <div>Purchase Location: {appliance.purchaseLocation}</div>
 
 <!-- STRETCH -->
 Register.js
@@ -56,3 +66,4 @@ Register.js
 Admin.js
     Add password
 Delete notes
+Show most recent note on main page?
