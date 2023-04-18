@@ -13,7 +13,7 @@ export const AdminNavBar = () => {
             </li>
 
             <li className="navbar__item navbar__all">
-                <Link className="navbar__link" to="/">All ApplYances</Link>
+                <Link className="navbar__link" to="/all-appliances">All ApplYances</Link>
             </li>
 
             <li className="navbar__item navbar__my">

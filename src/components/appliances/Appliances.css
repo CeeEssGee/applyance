@@ -1,0 +1,23 @@
+header {
+    font-size: large;
+    font-weight: bold;
+}
+
+img {
+max-width: 300px;
+}
+
+.applianceArticle {
+    display: flex
+}
+
+.applianceSection {
+    flex-wrap: wrap;
+    margin: 20px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+/* .manualLink {
+    padding-bottom: 0;
+} */
