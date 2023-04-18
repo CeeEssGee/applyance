@@ -7,11 +7,11 @@ img {
 max-width: 300px;
 }
 
-.applianceArticle {
+.applyanceArticle {
     display: flex
 }
 
-.applianceSection {
+.applyanceSection {
     flex-wrap: wrap;
     margin: 20px;
     border: 2px solid black;
