@@ -16,7 +16,7 @@ Create
         views directory
 database.json
     create some sample objects
-Bring in and update the boilerplate code for auth and nav from Kandy Korner starter code
+Review Kandy Korner and tweak the below
     Applyances.js and .css - rename App.cs and App.js
     index.js - update App to Applyance.js
     Applyances.js 
@@ -30,9 +30,16 @@ Bring in and update the boilerplate code for auth and nav from Kandy Korner star
     Authorized.js
 <!-- Status: We have a visible site with working code! -->
 
+<!-- NavBar Branch -->
+Create links for Home, All ApplYances, My ApplYances, Add New ApplYance - all currently take you to the home page
+Create an AdminNavBar and UserNavBar
 
 
 <!-- TODO's -->
+NavBar.js
+    Update links for My ApplYances, Add New ApplYance
+
+<!-- STRETCH -->
 Register.js
     Add password
 Admin.js

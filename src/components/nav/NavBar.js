@@ -1,19 +1,20 @@
 //  updated for Applyances
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
+import { AdminNavBar } from "./AdminNavBar"
+import { UserNavBar } from "./UserNavBar"
 
 export const NavBar = () => {
-    const navigate = useNavigate()
 
-    return (
-        <ul className="navbar">
-            <li className="navbar__item navbar__logout">
-                <Link className="navbar__link" to="" onClick={() => {
-                    localStorage.removeItem("apply_user")
-                    navigate("/", {replace: true})
-                }}>Logout</Link>
-            </li>
-        </ul>
-    )
+
+    // get apply user object out of local storage
+    const localApplyUser = localStorage.getItem("apply_user") // a string
+    const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
+
+    if (applyUserObject.admin) {
+        return <AdminNavBar />
+    }
+    else {
+        return <UserNavBar />
+    }
 }
-
