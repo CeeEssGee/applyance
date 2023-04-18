@@ -44,16 +44,20 @@ AdminViews
     Added Route for ApplianceLIst
 <!-- Status: We have a page that renders with a picture and link to manual -->
 
-
-
+<!-- My ApplYances page -->
+MyApplianceList.js in Appliances directory
+    copied code from ApplianceList.js
+    added useEffect for filtered for myAppliances
+AdminNavBar
+    Updated the link for My ApplYances
+Update UserNavBar and UserViews for All ApplYances and My ApplYances
+<!-- Status: We have working code for both All and My ApplYances for Admin and User -->
 
 
 
 <!-- TODO's -->
+Fix appliances to applyances at the end of each branch
 Flesh out single Appliance.js page
-NavBar.js
-    Update links for My ApplYances, Add New ApplYance
-Fix appliances to applyances at the end of the project
 Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
 Create link to show details plus notes for each item
     <div>Purchase Date: {appliance.purchaseDate}</div>

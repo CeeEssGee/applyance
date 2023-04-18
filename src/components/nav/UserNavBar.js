@@ -13,11 +13,11 @@ export const UserNavBar = () => {
             </li>
 
             <li className="navbar__item navbar__all">
-                <Link className="navbar__link" to="/">All ApplYances</Link>
+                <Link className="navbar__link" to="/all-applyances">All ApplYances</Link>
             </li>
 
             <li className="navbar__item navbar__my">
-                <Link className="navbar__link" to="/">My ApplYances</Link>
+                <Link className="navbar__link" to="/my-applyances">My ApplYances</Link>
             </li>
 
             <li className="navbar__item navbar__add">
@@ -33,4 +33,6 @@ export const UserNavBar = () => {
         </ul>
     )
 }
+
+
 
