@@ -33,6 +33,17 @@ Review Kandy Korner and tweak the below
 <!-- NavBar Branch -->
 Create links for Home, All ApplYances, My ApplYances, Add New ApplYance - all currently take you to the home page
 Create an AdminNavBar and UserNavBar
+<!-- Status: We have a visible NavBar with Links that all point to the root home page -->
+
+<!-- All ApplYances page -->
+ApplianceList.js in the Appliances directory 
+    wrote some basic code with comments
+AdminNavBar
+    Updated the link for All ApplYances
+AdminViews
+    Added Route for ApplianceLIst
+QUESTION - How can I use Assets in my database instead of trusting that my links will work on Demo Day?
+
 
 
 <!-- TODO's -->
@@ -44,3 +55,4 @@ Register.js
     Add password
 Admin.js
     Add password
+Delete notes
