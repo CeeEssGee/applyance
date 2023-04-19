@@ -53,7 +53,7 @@ export const MyApplyanceList = () => {
                     (applyance) => {
                         return <section key={applyance.id}
                             className="applyanceSection">
-                            <header>{applyance.make} {applyance.model}</header>
+                            <header>{applyance.makeModel}</header>
                             <div>
                                 <img src={applyance.picture} />
                             </div>

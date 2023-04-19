@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { ApplyanceList } from "../applyances/ApplyanceList"
 import { MyApplyanceList } from "../applyances/MyApplyanceList"
+import { ApplyanceForm } from "../applyances/ApplyanceForm"
 
 export const AdminViews = () => {    
     return (
@@ -19,6 +20,9 @@ export const AdminViews = () => {
 
                 {/* My ApplYances Page */}
                 <Route path="my-applyances" element={ <MyApplyanceList /> } />
+
+                {/* Add New ApplYance Page */}
+                <Route path="new-applyance" element={ <ApplyanceForm /> } />                
 
             </Route>
         </Routes>
