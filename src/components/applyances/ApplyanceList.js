@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Applyances.css"
 
 export const ApplyanceList = () => {
 
     // reassign useNavigate() hook to navigate to be used later    
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     // initial array of applyances
     const [applyances, setApplyances] = useState([])
@@ -42,7 +42,7 @@ export const ApplyanceList = () => {
                 (applyance) => {
                     return <section key={applyance.id}
                     className="applyanceSection">
-                        <header>{applyance.make} {applyance.model}</header>
+                        <header>{applyance.makeModel}</header>
                         <div>
                             <img src={applyance.picture} />
                         </div>

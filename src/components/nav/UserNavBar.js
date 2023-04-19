@@ -21,7 +21,7 @@ export const UserNavBar = () => {
             </li>
 
             <li className="navbar__item navbar__add">
-                <Link className="navbar__link" to="/">Add New ApplYance</Link>
+                <Link className="navbar__link" to="/new-applyance">Add New ApplYance</Link>
             </li>
 
             <li className="navbar__item navbar__logout">

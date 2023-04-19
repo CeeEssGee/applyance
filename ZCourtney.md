@@ -10,7 +10,7 @@ Create
         database.json
     components directory
         nav directory
-        appliances directory
+        applYances directory
         assets directory
         auth directory
         views directory
@@ -36,33 +36,44 @@ Create an AdminNavBar and UserNavBar
 <!-- Status: We have a visible NavBar with Links that all point to the root home page -->
 
 <!-- All ApplYances page -->
-ApplianceList.js in the Appliances directory 
+ApplYanceList.js in the ApplYances directory 
     wrote some basic code with comments
 AdminNavBar
     Updated the link for All ApplYances
 AdminViews
-    Added Route for ApplianceLIst
+    Added Route for ApplYanceLIst
 <!-- Status: We have a page that renders with a picture and link to manual -->
 
 <!-- My ApplYances page -->
-MyApplianceList.js in Appliances directory
-    copied code from ApplianceList.js
-    added useEffect for filtered for myAppliances
+MyApplYanceList.js in ApplYances directory
+    copied code from ApplYanceList.js
+    added useEffect for filtered for myApplYances
 AdminNavBar
     Updated the link for My ApplYances
 Update UserNavBar and UserViews for All ApplYances and My ApplYances
 <!-- Status: We have working code for both All and My ApplYances for Admin and User -->
 
+<!-- Add New ApplYance page -->
+ApplyanceForm.js in ApplYances directory
+    create form
+Update Admin and User NavBars and Views
+<!-- Status: We have a working form! -->
+
+
+
 
 
 <!-- TODO's -->
-Fix appliances to applyances at the end of each branch
-Flesh out single Appliance.js page
+Fix applYances to applyances at the end of each branch
+Flesh out single ApplYance.js page
 Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
 Create link to show details plus notes for each item
-    <div>Purchase Date: {appliance.purchaseDate}</div>
-    <div>Purchase Price: {appliance.purchasePrice}</div>
-    <div>Purchase Location: {appliance.purchaseLocation}</div>
+    <div>Purchase Date: {applYance.purchaseDate}</div>
+    <div>Purchase Price: {applYance.purchasePrice}</div>
+    <div>Purchase Location: {applYance.purchaseLocation}</div>
+To filter on tags - 01-08
+
+
 
 <!-- STRETCH -->
 Register.js
@@ -71,3 +82,5 @@ Admin.js
     Add password
 Delete notes
 Show most recent note on main page?
+
+
