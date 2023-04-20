@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
+import { ApplyanceSearch } from "../applyances/ApplyanceSearch"
 
 export const AdminNavBar = () => {
     const navigate = useNavigate()
@@ -9,7 +10,7 @@ export const AdminNavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item navbar__home">
-                <Link className="navbar__link" to="/">Home</Link>
+                <Link className="navbar__link" to="/home">Home</Link>
             </li>
 
             <li className="navbar__item navbar__all">
@@ -20,9 +21,15 @@ export const AdminNavBar = () => {
                 <Link className="navbar__link" to="/my-applyances">My ApplYances</Link>
             </li>
 
+            {/* <li className="navbar__item navbar__search">
+                <ApplyanceSearch /> 
+                </li> */}
+
             <li className="navbar__item navbar__add">
                 <Link className="navbar__link" to="/new-applyance">Add New ApplYance</Link>
             </li>
+
+
 
             <li className="navbar__item navbar__logout">
                 <Link className="navbar__link" to="" onClick={() => {
