@@ -1,0 +1,28 @@
+header {
+    font-size: large;
+    font-weight: bold;
+}
+
+img {
+max-width: 300px;
+margin-bottom: auto;
+}
+
+.applyanceArticle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.applyanceSection {
+    margin: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    display: flex;
+    max-width: 500px;
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+

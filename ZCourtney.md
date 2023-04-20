@@ -100,7 +100,10 @@ ApplyanceDetails.js (applyanceId)
 MyApplyanceDetails.js (myApplyanceId) - same steps
 <!-- Status - Detailed view works for All and My ApplYances -->
 
-
+<!-- Separate All and My Applyances -->
+Created a myApplyances folder and moved the MyApplyances components
+Updated User/AdminViews
+<!-- Status - Everything seems to be working, no errors -->
 
 
 
