@@ -59,6 +59,37 @@ ApplyanceForm.js in ApplYances directory
 Update Admin and User NavBars and Views
 <!-- Status: We have a working form! -->
 
+<!-- Add ability to search ApplYances -->
+ApplyanceSearch.js in ApplYances directory
+    create simple search fx
+User/AdminViews.js
+    Add ApplyanceSearch Route
+ApplyanceContainer.js in ApplYances directory
+    Export fx with [searchTerms, setSearchTerms] = useState()
+User/AdminViews.js
+    Cut <ApplyanceSearch /> and <ApplyanceList /> and replace with <ApplyanceContainer />
+ApplyanceContainer.js
+    return <ApplyanceSearch /> and <ApplyanceList /> inside of a fragment
+    set the props to pass down to the children:
+        on the ApplyanceSearch, setterFunction={setSearchTerms}
+        on ApplyanceList, searchTermState={searchTerms}
+ApplyanceSearch.js
+    update parameter to setterFunction (the prop from the parent), and it now has access to the value of the variable (setSearchTerms)
+    write onChange function and use setterFunction
+ApplyanceContainer.js
+    add "" to the useState("") to bring an empty string as the initial value
+ApplyanceList.js
+    add { searchTermList } as the parameter to our component fx
+    useEffect and observe searchTermState
+    const searchedApplyances = applyances.filter(applyance => {
+        return applyance.makeModel.toLowerCase().includes(searchTermState.toLowerCase())})
+        setFiltered(searchedApplyances)
+        }   
+        [searchTermState]
+        )
+Do the same for MyApplyances
+<!-- Status - Search works for ApplYances and MyApplYances -->
+
 
 
 
