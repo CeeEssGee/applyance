@@ -90,19 +90,30 @@ ApplyanceList.js
 Do the same for MyApplyances
 <!-- Status - Search works for ApplYances and MyApplYances -->
 
+<!-- Edit an Applyance -->
+ApplyanceDetails.js in Applyances directory
+    export basic fx
+User/AdminViews.js
+    set a variable for ApplyanceId
+ApplyanceDetails.js (applyanceId)
+    Renders details for selected ApplYance
+MyApplyanceDetails.js (myApplyanceId) - same steps
+<!-- Status - Detailed view works for All and My ApplYances -->
+
 
 
 
 
 <!-- TODO's -->
-Fix applYances to applyances at the end of each branch
 Flesh out single ApplYance.js page
-Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
 Create link to show details plus notes for each item
     <div>Purchase Date: {applYance.purchaseDate}</div>
     <div>Purchase Price: {applYance.purchasePrice}</div>
     <div>Purchase Location: {applYance.purchaseLocation}</div>
 To filter on tags - 01-08
+Move search bar to NavBar? 
+Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
+Font - Agency
 
 
 

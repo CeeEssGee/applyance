@@ -22,7 +22,8 @@ export const ApplyanceForm = () => {
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        /*
+
+        /* Sample ApplYance to match for data to send to API
             {
           "id": 1,
           "makeModel": "Silhouette Cameo4",

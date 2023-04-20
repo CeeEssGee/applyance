@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import "./Applyances.css"
 
 
-export const Applyance = ({ id, makeModel, picture, manual }) => {
+export const MyApplyance = ({ id, makeModel, picture, manual }) => {
     return <section className="applyanceSection">
         <header>
             <Link to={`/all-applyances/${id}`}>{makeModel}</Link>

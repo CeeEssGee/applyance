@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import "./Applyances.css"
+import { MyApplyance } from "./MyAppliance"
+
 
 export const MyApplyanceList = ( {mySearchTermState} ) => {
 
@@ -60,16 +62,13 @@ export const MyApplyanceList = ( {mySearchTermState} ) => {
         <article className="applyanceArticle">
             {
                 filteredApplyances.map(
-                    (applyance) => {
-                        return <section key={applyance.id}
-                            className="applyanceSection">
-                            <header>{applyance.makeModel}</header>
-                            <div>
-                                <img src={applyance.picture} />
-                            </div>
-                            <div className="manualLink"><Link to={applyance.manual}>Link to Manual</Link></div>
-                        </section>
-                    }
+                    (applyance) => <MyApplyance key={`applyance--${applyance.id}`}
+                    id={applyance.id}
+                makeModel={applyance.makeModel}
+                picture={applyance.picture}
+                manual={applyance.manual}
+                purchaseDate={applyance.purchaseDate}
+                />
                 )
             }
 
