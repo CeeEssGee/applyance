@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
-import "./Applyances.css"
 import { MyApplyance } from "./MyAppliance"
-
+import "./Applyances.css"
 
 export const MyApplyanceList = ( {mySearchTermState} ) => {
 

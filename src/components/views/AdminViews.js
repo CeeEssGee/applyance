@@ -1,9 +1,12 @@
 import { Outlet, Route, Routes, Link } from "react-router-dom"
 import { ApplyanceForm } from "../applyances/ApplyanceForm"
 import { ApplyanceContainer } from "../applyances/ApplyanceContainer"
-import { MyApplyanceContainer } from "../applyances/MyApplyanceContainer"
 import { ApplyanceDetails } from "../applyances/ApplyanceDetails"
 import { HomePage } from "../home/HomePage"
+// import { MyApplyanceContainer } from "../applyances/MyApplyanceContainer"
+// import { MyApplyanceDetails } from "../applyances/MyApplyanceDetails"
+import { MyApplyanceContainer } from "../myApplyances/MyApplyanceContainer"
+import { MyApplyanceDetails } from "../myApplyances/MyApplyanceDetails"
 
 export const AdminViews = () => {
     return (
@@ -26,7 +29,7 @@ export const AdminViews = () => {
 
                 {/* My ApplYances Page */}
                 <Route path="my-applyances" element={<MyApplyanceContainer />} />
-                <Route path="my-applyances/:myApplyanceId" element={ <MyApplyanceContainer /> } />
+                <Route path="my-applyances/:myApplyanceId" element={ <MyApplyanceDetails /> } />
 
                 {/* Add New ApplYance Page */}
                 <Route path="new-applyance" element={<ApplyanceForm />} />
