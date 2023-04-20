@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import "./Applyances.css"
 
-export const ApplyanceList = () => {
+export const ApplyanceList = ({ searchTermState }) => {
 
     // reassign useNavigate() hook to navigate to be used later    
     // const navigate = useNavigate()
@@ -34,9 +34,19 @@ export const ApplyanceList = () => {
     [] // empty to observe initial component state
     )
 
+    useEffect(
+    () => {
+        const searchedApplyances = applyances.filter(applyance => {
+            return applyance.makeModel.toLowerCase().includes(searchTermState.toLowerCase())
+        })
+        setFiltered(searchedApplyances)
+    },
+    [ searchTermState ] //could be blank
+    )
+
     return <>
-    
-    <article className="applyanceArticle">
+    <h2>All ApplYances</h2>
+    <article className="applyanceArticle">       
         {
             filteredApplyances.map(
                 (applyance) => {

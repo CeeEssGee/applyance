@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import "./Applyances.css"
 
-export const MyApplyanceList = () => {
+export const MyApplyanceList = ( {mySearchTermState} ) => {
 
     // get apply user object out of local storage
     const localApplyUser = localStorage.getItem("apply_user") // a string
@@ -38,15 +38,25 @@ export const MyApplyanceList = () => {
     )
 
     useEffect(
-    () => {
-        const myApplyances = applyances.filter(applyance => applyance.userId === applyUserObject.id) 
-        setFiltered(myApplyances)
-    },
-    [applyances] //could be blank
+        () => {
+            const myApplyances = applyances.filter(applyance => applyance.userId === applyUserObject.id)
+            setFiltered(myApplyances)
+        },
+        [applyances] //could be blank
     )
 
-    return <>
+    useEffect(
+        () => {
+            const mySearchedApplyances = applyances.filter(applyance => {
+                return applyance.makeModel.toLowerCase().includes(mySearchTermState.toLowerCase())
+            })
+            setFiltered(mySearchedApplyances)
+        },
+        [ mySearchTermState ] //could be blank
+        )
 
+    return <>
+        <h2>All ApplYances</h2>
         <article className="applyanceArticle">
             {
                 filteredApplyances.map(
