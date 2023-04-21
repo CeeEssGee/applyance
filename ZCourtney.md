@@ -106,7 +106,6 @@ Updated User/AdminViews
 <!-- Status - Everything seems to be working, no errors -->
 
 
-
 <!-- TODO's -->
 Flesh out single ApplYance.js page
 Create link to show details plus notes for each item

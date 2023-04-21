@@ -1,12 +1,10 @@
-import { Outlet, Route, Routes } from "react-router-dom"
-import { ApplyanceForm } from "../applyances/ApplyanceForm"
+import { Outlet, Route, Routes, Link } from "react-router-dom"
 import { ApplyanceContainer } from "../applyances/ApplyanceContainer"
 import { HomePage } from "../home/HomePage"
 import { ApplyanceDetails } from "../applyances/ApplyanceDetails"
-// import { MyApplyanceDetails } from "../applyances/MyApplyanceDetails"
-// import { MyApplyanceContainer } from "../applyances/MyApplyanceContainer"
 import { MyApplyanceDetails } from "../myApplyances/MyApplyanceDetails"
 import { MyApplyanceContainer } from "../myApplyances/MyApplyanceContainer"
+import { ApplyanceForm } from "../applyances/ApplyanceForm"
 
 export const UserViews = () => {
 
@@ -14,7 +12,9 @@ export const UserViews = () => {
         <Routes>
             <Route path="/" element={
                 <>
-                    <h1 className="title--main">ApplYances</h1>
+                    <h1 className="title--main">
+                        <Link to={`all-applyances`}><img src="/images/ApplYances.jpg" /></Link>
+                        </h1>
                     <div>Everything you need (and some of what you don't) for any applYance and electronic device you take the time to enter into the database</div>
                     <p></p>
                     <Outlet />
@@ -34,7 +34,7 @@ export const UserViews = () => {
                 <Route path="my-applyances/:myApplyanceId" element={<MyApplyanceDetails />} />
 
                 {/* Add New ApplYance Page */}
-                <Route path="new-applyances" element={<ApplyanceForm />} />
+                <Route path="new-applyance" element={<ApplyanceForm />} />
 
             </Route>
         </Routes>
