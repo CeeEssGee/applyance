@@ -1,19 +1,39 @@
-import { AdminViews } from "./AdminViews"
-import { UserViews } from "./UserViews"
+import { Outlet, Route, Routes, Link } from "react-router-dom"
+import { ApplyanceForm } from "../applyances/ApplyanceForm"
+import { ApplyanceContainer } from "../applyances/ApplyanceContainer"
+import { ApplyanceDetails } from "../applyances/ApplyanceDetails"
+import { HomePage } from "../home/HomePage"
+import { MyApplyanceContainer } from "../myApplyances/MyApplyanceContainer"
+import { MyApplyanceDetails } from "../myApplyances/MyApplyanceDetails"
+
 
 export const ApplicationViews = () => {
+    return (
+        <Routes>
+            <Route path="/" element={
+                <>
+                    <h1 className="title--main">
+                        <Link to={`all-applyances`}><img src="/images/ApplYances.jpg" /></Link>
+                        </h1>
+                    <div>Everything you need (and some of what you don't) for any appliance and electronic device you take the time to enter into the database</div>
+                    <p></p>
+                    <Outlet />
+                </>
+            }>
+                <Route path="home" element={<HomePage />} />
 
+                {/* All ApplYances Page */}
+                <Route path="all-applyances" element={<ApplyanceContainer />} />
+                <Route path="all-applyances/:applyanceId" element={<ApplyanceDetails />} />
 
-    // get apply user object out of local storage
-    const localApplyUser = localStorage.getItem("apply_user") // a string
-    const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
+                {/* My ApplYances Page */}
+                <Route path="my-applyances" element={<MyApplyanceContainer />} />
+                <Route path="my-applyances/:myApplyanceId" element={ <MyApplyanceDetails /> } />
 
-    if (applyUserObject.admin) {
-        // return admin view
-        return <AdminViews />
-    } else {
-        // return user view
-        return <UserViews />
-    }
+                {/* Add New ApplYance Page */}
+                <Route path="new-applyance" element={<ApplyanceForm />} />
+
+            </Route>
+        </Routes>
+    )
 }
-

@@ -28,7 +28,7 @@ export const MyApplyanceList = ( {mySearchTermState} ) => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/applyances?_sort=name&_expand=user`)
+            fetch(`http://localhost:8088/applyances?_sort=makeModel&_expand=user`)
                 .then(response => response.json())
                 .then((applyanceArray) => {
                     setApplyances(applyanceArray)
