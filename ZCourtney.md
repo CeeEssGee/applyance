@@ -107,6 +107,7 @@ Updated User/AdminViews
 
 
 <!-- TODO's -->
+Rewrite image uploads using Cloudinary
 Flesh out single ApplYance.js page
 Create link to show details plus notes for each item
     <div>Purchase Date: {applYance.purchaseDate}</div>
