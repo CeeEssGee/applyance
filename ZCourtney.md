@@ -105,6 +105,9 @@ Created a myApplyances folder and moved the MyApplyances components
 Updated User/AdminViews
 <!-- Status - Everything seems to be working, no errors -->
 
+<!-- Move search to NavBar or ApplicationView -->
+Consdensed NavBars and Views - pushed to GitHub before lunch
+
 
 <!-- TODO's -->
 Rewrite image uploads using Cloudinary
