@@ -5,11 +5,32 @@ import "./Applyances.css"
 const localApplyUser = localStorage.getItem("apply_user") // a string
 const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
 
-export const MyApplyance = ({ id, makeModel, picture, manual, userId }) => {
+export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllApplyances, applyanceObject }) => {
 
+    const deleteButton = () => {
+        if (applyUserObject.id === userId || applyUserObject.admin === true) {
+            return <>
+            <footer><button
+            			onClick={() => {
+                            fetch(`http://localhost:8088/applyances/${applyanceObject.id}`, {
+                                method: "DELETE"
+                                }) 
+                            .then(() => {
+                            getAllApplyances()
+                            })
+                        }}
+            
+            >
+    Delete ApplYance
+    </button></footer> 
+            </>
+        } else {
+            return ""
+        }
+    }
 
-
-    return <section className="applyanceSection">
+    return (
+    <section className="applyanceSection">
         <header>
             <Link to={`/my-applyances/${id}`}>{makeModel}</Link>
         </header>
@@ -18,6 +39,8 @@ export const MyApplyance = ({ id, makeModel, picture, manual, userId }) => {
         </div>
         <div className="manualLink">
             <Link to={manual}>Link to Manual</Link>
-        </div>
+        </div>        
+        {deleteButton()}
     </section>
+    )
 }

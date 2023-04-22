@@ -119,13 +119,20 @@ ApplyanceEdit.js
     copy code from ApplyanceDetails.js and tweak
 ApplyanceViews.js
     Add ApplyanceEdit route
-Works for All Applyances
+<!-- Status - works for All Applyances/MyApplyances except I have to refresh when switching between users -->
+
+<!-- Delete an appliance -->
+ApplyanceList.js
+    Add a deleteButton function
+MyApplyanceList.js
+    Add a deleteButton function
+<!-- Status - works for All Applyances/MyApplyances except I have to refresh when switching between users -->
+
 
 
 
 <!-- QUESTIONS -->
-On All ApplYances, why do I have to refresh for the Edit Button to show properly when I switch between users?
-    Applyance.js component
+On All ApplYances/MyApplyances, why do I have to refresh for the Delete Button to show properly when I switch between users?
 
 
 <!-- TODO's -->
