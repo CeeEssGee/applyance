@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { MyApplyance } from "./MyApplyance"
 import "./Applyances.css"
 
-export const MyApplyanceList = ( {mySearchTermState} ) => {
+export const MyApplyanceList = ({ mySearchTermState }) => {
 
     // get apply user object out of local storage
     const localApplyUser = localStorage.getItem("apply_user") // a string
@@ -25,6 +25,14 @@ export const MyApplyanceList = ( {mySearchTermState} ) => {
         },
         [applyances]
     )
+
+    const getAllApplyances = () => {
+        fetch(`http://localhost:8088/applyances?_sort=makeModel&_expand=user`)
+            .then(response => response.json())
+            .then((applyanceArray) => {
+                setApplyances(applyanceArray)
+            })
+    }
 
     useEffect(
         () => {
@@ -53,8 +61,8 @@ export const MyApplyanceList = ( {mySearchTermState} ) => {
             })
             setFiltered(mySearchedApplyances)
         },
-        [ mySearchTermState ] //could be blank
-        )
+        [mySearchTermState] //could be blank
+    )
 
     return <>
         <h2>All ApplYances</h2>
@@ -62,13 +70,15 @@ export const MyApplyanceList = ( {mySearchTermState} ) => {
             {
                 filteredApplyances.map(
                     (applyance) => <MyApplyance key={`applyance--${applyance.id}`}
-                    id={applyance.id}
-                makeModel={applyance.makeModel}
-                picture={applyance.picture}
-                manual={applyance.manual}
-                purchaseDate={applyance.purchaseDate}
-                userId={applyance.userId}
-                />
+                        id={applyance.id}
+                        makeModel={applyance.makeModel}
+                        picture={applyance.picture}
+                        manual={applyance.manual}
+                        purchaseDate={applyance.purchaseDate}
+                        userId={applyance.userId}
+                        getAllApplyances={getAllApplyances}
+                        applyanceObject={applyance}
+                    />
                 )
             }
 
