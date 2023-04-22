@@ -2,16 +2,19 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-between;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    /* justify-content: space-evenly; */
+    /* flex-basis: 20%; */
     list-style-type: none;
 }
 
-.navbar__logout {
+/* .navbar__logout {
     margin-left: auto;
-}
+} */
 
-
+/* .navbar__link {
+    justify-content: space-evenly;
+} */

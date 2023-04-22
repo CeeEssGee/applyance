@@ -107,6 +107,25 @@ Updated User/AdminViews
 
 <!-- Move search to NavBar or ApplicationView -->
 Consdensed NavBars and Views - pushed to GitHub before lunch
+<!-- Status - Put on hold -->
+
+<!-- Edit an Applyance -->
+ApplyanceEdit.js in Applyances directory
+ApplyanceList.js
+    update JSX with Edit button so applyance id is in the header and is a <Link> component that routes the user to /applyances/{id}/edit
+<!-- QUESTION
+Why do I have to refresh to get my edit button? -->
+ApplyanceEdit.js   
+    copy code from ApplyanceDetails.js and tweak
+ApplyanceViews.js
+    Add ApplyanceEdit route
+Works for All Applyances
+
+
+
+<!-- QUESTIONS -->
+On All ApplYances, why do I have to refresh for the Edit Button to show properly when I switch between users?
+    Applyance.js component
 
 
 <!-- TODO's -->

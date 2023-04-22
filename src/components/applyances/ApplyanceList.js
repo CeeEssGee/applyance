@@ -35,6 +35,7 @@ export const ApplyanceList = ({ searchTermState }) => {
     [] // empty to observe initial component state
     )
 
+
     useEffect(
     () => {
         const searchedApplyances = applyances.filter(applyance => {
@@ -56,6 +57,7 @@ export const ApplyanceList = ({ searchTermState }) => {
                 picture={applyance.picture}
                 manual={applyance.manual}
                 purchaseDate={applyance.purchaseDate}
+                userId={applyance.userId}
                 />)
         }
 
