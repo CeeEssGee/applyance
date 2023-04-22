@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
-import { MyApplyance } from "./MyAppliance"
+import { MyApplyance } from "./MyApplyance"
 import "./Applyances.css"
 
 export const MyApplyanceList = ( {mySearchTermState} ) => {
@@ -67,6 +67,7 @@ export const MyApplyanceList = ( {mySearchTermState} ) => {
                 picture={applyance.picture}
                 manual={applyance.manual}
                 purchaseDate={applyance.purchaseDate}
+                userId={applyance.userId}
                 />
                 )
             }
