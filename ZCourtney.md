@@ -142,7 +142,12 @@ Update the form to add tags using a dropdown
 Made sure everything works on All and My lists and details
 <!-- Status - Everything seems to be working -->
 
-<!-- Add multiple notes to each appliance -->
+<!-- Show notes to each appliance -->
+Updated My and All ApplyanceDetails modules to show notes for that individual appliance.
+Create an Add New Note button on both modules
+
+<!-- Where I left off -->
+Now need to figure out how to add new notes using a modal? Pop out window?
 
 
 

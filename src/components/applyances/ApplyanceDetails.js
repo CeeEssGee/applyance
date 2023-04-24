@@ -11,16 +11,16 @@ export const ApplyanceDetails = () => {
     const [applyance, updatedApplyance] = useState({})
 
     const [notes, setNotes] = useState([])
-    
-useEffect(
-    () => {
-    fetch(`http://localhost:8088/notes?applyanceId=${applyanceId}&_expand=applyance&_sort=id&_order=desc`) 
-    .then(response => response.json())
-    .then((notesArray) => {
-        setNotes(notesArray)
-    })
-    },
-    [] 
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/notes?applyanceId=${applyanceId}&_expand=applyance&_sort=id&_order=desc`)
+                .then(response => response.json())
+                .then((notesArray) => {
+                    setNotes(notesArray)
+                })
+        },
+        []
     )
 
 
@@ -117,16 +117,18 @@ useEffect(
             </footer>
         </section>
         <section className="applyanceNotes">
-            Notes: 
+        <button>Add New Note</button>
+            <p></p>
+            Notes:
             <div>
                 {
-                    applyanceId ?                     
-                    notes.map(
-                        (note) => {
-                            return <div key={note.id} className="note">
-                                {note.description}
+                    applyanceId ?
+                        notes.map(
+                            (note) => {
+                                return <div key={note.id} className="note">
+                                    {note.description}
                                 </div>
-                        }
+                            }
                         )
                         : ""
                 }
