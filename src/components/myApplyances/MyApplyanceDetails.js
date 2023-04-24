@@ -14,9 +14,18 @@ export const MyApplyanceDetails = () => {
     const localApplyUser = localStorage.getItem("apply_user") // a string
     const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
 
+    
+    const getAllApplyances = () => {
+        fetch(`http://localhost:8088/applyances?_sort=makeModel&_expand=user`)
+            .then(response => response.json())
+            .then((applyanceArray) => {
+                updatedApplyance(applyanceArray)
+            })
+    }
+
     useEffect(
         () => {
-            fetch(`http://localhost:8088/applyances?_expand=user&id=${myApplyanceId}`)
+            fetch(`http://localhost:8088/applyances?_expand=tag&_expand=user&id=${myApplyanceId}`)
                 .then(response => response.json())
                 .then((data) => {
                     const singleApplyance = data[0]
@@ -40,6 +49,27 @@ export const MyApplyanceDetails = () => {
         }
     }
     
+    const deleteButton = () => {
+        if (applyUserObject.id === applyance.userId || applyUserObject.admin === true) {
+            return <>
+            <footer><button
+                        onClick={() => {
+                            fetch(`http://localhost:8088/applyances/${myApplyanceId}`, {
+                                method: "DELETE"
+                                }) 
+                            .then(() => {
+                            getAllApplyances()
+                            })
+                        }}
+            
+            >
+    Delete ApplYance
+    </button></footer> 
+            </>
+        } else {
+            return ""
+        }
+    }
 
     return (<article className="applyanceArticle">
     <section className="applyanceSection">
@@ -55,8 +85,10 @@ export const MyApplyanceDetails = () => {
             <div>Purchase Date: {applyance.purchaseDate}</div>
             <div>Purchase Price: {applyance.purchasePrice}</div>
             <div>Purchase Location: {applyance.purchaseLocation}</div>
+            <div className="tag">{applyance?.tag?.location}</div>
         </div>
         {editButton()}
+        {deleteButton()}
     </section>
     </article>)
 }

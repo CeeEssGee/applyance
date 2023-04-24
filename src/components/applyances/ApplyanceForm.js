@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 
 export const ApplyanceForm = () => {
@@ -9,7 +9,8 @@ export const ApplyanceForm = () => {
         manual: "",
         purchaseDate: "",
         purchasePrice: 0,
-        purchaseLocation: ""
+        purchaseLocation: "",
+        tagId: ""
     })
 
 
@@ -18,9 +19,23 @@ export const ApplyanceForm = () => {
     // get apply user object out of local storage
     const localApplyUser = localStorage.getItem("apply_user") // a string
     const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
+    
+    const [tags, setTags] = useState([])
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/tags?_sort=location`)
+                .then(response => response.json())
+                .then((tagArray) => {
+                    setTags(tagArray)
+                })
+        },
+        []
+    )
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
+
 
 
         /* Sample ApplYance to match for data to send to API
@@ -32,7 +47,8 @@ export const ApplyanceForm = () => {
           "purchaseDate": "2022-05-27",
           "purchasePrice": 339.99,
           "purchaseLocation": "Amazon",
-          "userId": 1
+          "userId": 1,
+           "tagId": 5
             }
         */
 
@@ -43,7 +59,8 @@ export const ApplyanceForm = () => {
             manual: applyance.manual,
             purchaseDate: applyance.purchaseDate,
             purchasePrice: applyance.purchasePrice,
-            purchaseLocation: applyance.purchaseLocation
+            purchaseLocation: applyance.purchaseLocation,
+            tagId: applyance.tagId
         }
 
         return fetch(`http://localhost:8088/applyances`, {
@@ -58,6 +75,8 @@ export const ApplyanceForm = () => {
                 navigate("/my-applyances")
             })
     }
+
+
 
     return (
         <form className="applyanceForm">
@@ -123,6 +142,41 @@ export const ApplyanceForm = () => {
                 </div>
             </fieldset>
 
+
+
+            {/* fieldset for tagId */}
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="tagId">Location in the Home: </label>
+                    <select id="tagId"
+                        required autoFocus
+                        className="form-control"
+                        value={applyance.tagId}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...applyance }
+                                copy.tagId = parseInt(evt.target.value)
+                                update(copy)
+                            }
+                        }
+                    ><option value="0">Select home location</option>
+                        {
+                            tags.map(
+                                (tag) => {
+                                    return <option key={tag.id}
+                                    className="tagDropdown" value={tag.id}>
+                                        {tag.location}
+                                    </option>
+                                }
+                            )
+                        }
+
+                    </select>
+                </div>
+            </fieldset>
+
+
+
             {/* fieldset for purchase date */}
             <fieldset>
                 <div className="form-group">
@@ -183,10 +237,10 @@ export const ApplyanceForm = () => {
                 </div>
             </fieldset>
 
-            <button 
+            <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
-                    Save ApplYance
+                Save ApplYance
             </button>
         </form>
     )
