@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
-import "./Applyances.css"
+import "../applyances/Applyances.css"
+
 
 export const MyApplyanceDetails = () => {
 
@@ -71,24 +72,33 @@ export const MyApplyanceDetails = () => {
         }
     }
 
-    return (<article className="applyanceArticle">
+    return (<article className="detailsArticle">
     <section className="applyanceSection">
-        <header className="applyance__header">{applyance.makeModel}</header>
+        <div>
+            <header className="applyance__header">{applyance.makeModel}</header>
+            <div className="tag">{applyance?.tag?.location}</div>
+            <div className="manualLink">
+                <Link to={applyance.manual}>Link to Manual</Link>
+            </div>
+        </div>
+        
         <div>
             <img src={`${applyance.picture}`}></img>
         </div>
-        <div className="manualLink">
-            <Link to={applyance.manual}>Link to Manual</Link>
-        </div>
-        <div>Owner: {applyance?.user?.firstName}</div>
-        <div className="purchaseDiv">Purchase Information:
-            <div>Purchase Date: {applyance.purchaseDate}</div>
-            <div>Purchase Price: {applyance.purchasePrice}</div>
-            <div>Purchase Location: {applyance.purchaseLocation}</div>
-            <div className="tag">{applyance?.tag?.location}</div>
-        </div>
-        {editButton()}
-        {deleteButton()}
+        
+        <div>
+            <div>Owner: {applyance?.user?.firstName}</div>
+            <div className="purchaseDiv">Purchase Information:
+                <div>Purchase Date: {applyance.purchaseDate}</div>
+                <div>Purchase Price: {applyance.purchasePrice}</div>
+                <div>Purchase Location: {applyance.purchaseLocation}</div>
+            </div>
+            </div>
+            
+        <footer>
+                {editButton()}
+                {deleteButton()}
+            </footer>
     </section>
     </article>)
 }

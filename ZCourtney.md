@@ -142,6 +142,9 @@ Update the form to add tags using a dropdown
 Made sure everything works on All and My lists and details
 <!-- Status - Everything seems to be working -->
 
+<!-- Add multiple notes to each appliance -->
+
+
 
 
 <!-- QUESTIONS -->
