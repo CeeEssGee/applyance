@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import "./Applyances.css"
+import "../applyances/Applyances.css"
 
 
 export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllApplyances, applyanceObject, location }) => {
@@ -44,18 +44,24 @@ export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllAppl
 
     return (
     <section className="applyanceSection">
-        <header>
-            <Link to={`/my-applyances/${id}`}>{makeModel}</Link>
-        </header>
+        <div>
+            <header>
+                <Link to={`/my-applyances/${id}`}>{makeModel}</Link>
+            </header>
+            <div className="tag">{location}</div>
+            <div className="manualLink">
+                <Link to={manual}>Link to Manual</Link>
+            </div>
+        </div>
+        
         <div className="picture">
             <img src={picture} />
         </div>
-        <div className="manualLink">
-            <Link to={manual}>Link to Manual</Link>
-        </div>
-        <div className="tag">{location}</div>
-        {editButton()}
-        {deleteButton()}
+        
+        <footer>
+                {editButton()}
+                {deleteButton()}
+            </footer>
     </section>
     )
 }

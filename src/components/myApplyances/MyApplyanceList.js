@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { MyApplyance } from "./MyApplyance"
-import "./Applyances.css"
+import "../applyances/Applyances.css"
+
 
 export const MyApplyanceList = ({ mySearchTermState }) => {
 

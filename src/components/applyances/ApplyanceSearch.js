@@ -1,3 +1,5 @@
+import "./Applyances.css"
+
 export const ApplyanceSearch = ({ setterFunction }) => {
     return (
         <div>
