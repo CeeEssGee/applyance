@@ -156,5 +156,5 @@ Admin.js
     Add password
 Delete notes
 Show most recent note on main page?
-
+Archive
 

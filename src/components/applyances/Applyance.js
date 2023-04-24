@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom"
 import "./Applyances.css"
 
-// get apply user object out of local storage
-const localApplyUser = localStorage.getItem("apply_user") // a string
-const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
 
 
 
 export const Applyance = ({ id, makeModel, picture, manual, userId, getAllApplyances, applyanceObject }) => {
-
+    
+// get apply user object out of local storage
+const localApplyUser = localStorage.getItem("apply_user") // a string
+const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
+    
     const deleteButton = () => {
         if (applyUserObject.id === userId || applyUserObject.admin === true) {
             return <>
