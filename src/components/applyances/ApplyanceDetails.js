@@ -10,6 +10,20 @@ export const ApplyanceDetails = () => {
 
     const [applyance, updatedApplyance] = useState({})
 
+    const [notes, setNotes] = useState([])
+    
+useEffect(
+    () => {
+    fetch(`http://localhost:8088/notes?applyanceId=${applyanceId}&_expand=applyance&_sort=id&_order=desc`) 
+    .then(response => response.json())
+    .then((notesArray) => {
+        setNotes(notesArray)
+    })
+    },
+    [] 
+    )
+
+
     const getAllApplyances = () => {
         fetch(`http://localhost:8088/applyances?_sort=makeModel&_expand=user`)
             .then(response => response.json())
@@ -92,7 +106,7 @@ export const ApplyanceDetails = () => {
                 <div>Owner: {applyance?.user?.firstName}</div>
                 <div className="purchaseDiv">Purchase Information:
                     <div>Purchase Date: {applyance.purchaseDate}</div>
-                    <div>Purchase Price: {applyance.purchasePrice}</div>
+                    <div>Purchase Price: ${applyance.purchasePrice}</div>
                     <div>Purchase Location: {applyance.purchaseLocation}</div>
                 </div>
             </div>
@@ -102,6 +116,22 @@ export const ApplyanceDetails = () => {
                 {deleteButton()}
             </footer>
         </section>
-        
+        <section className="applyanceNotes">
+            Notes: 
+            <div>
+                {
+                    applyanceId ?                     
+                    notes.map(
+                        (note) => {
+                            return <div key={note.id} className="note">
+                                {note.description}
+                                </div>
+                        }
+                        )
+                        : ""
+                }
+
+            </div>
+        </section>
     </article>)
 }

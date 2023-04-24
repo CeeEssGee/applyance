@@ -1,3 +1,8 @@
+body {
+    background: #61C9A8;
+    color: black
+}
+
 header {
     font-size: large;
     font-weight: bold;
@@ -27,8 +32,8 @@ margin-bottom: auto;
 }
 
 .tag {
-    background: #e63946;
-    color: #f1faee;
+    background: #BA3B46;
+    color: #FFEEDB;
     border-radius: 5px;
     text-align: center;
     width: 125px;
@@ -38,4 +43,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+button {
+    background: #ED9B40;
+    color: black
 }

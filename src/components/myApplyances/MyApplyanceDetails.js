@@ -90,7 +90,7 @@ export const MyApplyanceDetails = () => {
             <div>Owner: {applyance?.user?.firstName}</div>
             <div className="purchaseDiv">Purchase Information:
                 <div>Purchase Date: {applyance.purchaseDate}</div>
-                <div>Purchase Price: {applyance.purchasePrice}</div>
+                <div>Purchase Price: ${applyance.purchasePrice}</div>
                 <div>Purchase Location: {applyance.purchaseLocation}</div>
             </div>
             </div>
