@@ -16,36 +16,52 @@ export const ApplyanceEdit = () => {
         purchaseDate: "",
         purchasePrice: 0,
         purchaseLocation: "",
+        tagId: ""
     })
+
+    
+    const [tags, setTags] = useState([])
 
     useEffect(
         () => {
-        fetch(`http://localhost:8088/applyances/${applyanceId}`)
-            .then(response => response.json())
-            .then((data) => {
-                const applyanceArray = data
-                editApplyance(applyanceArray)
+            fetch(`http://localhost:8088/tags?_sort=location`)
+                .then(response => response.json())
+                .then((tagArray) => {
+                    setTags(tagArray)
+                })
+        },
+        []
+    )
 
-            })
-    },
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/applyances/${applyanceId}`)
+                .then(response => response.json())
+                .then((data) => {
+                    const applyanceArray = data
+                    editApplyance(applyanceArray)
+
+                })
+        },
         [applyanceId]
     )
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-    
 
-    return fetch(`http://localhost:8088/applyances/${applyance.id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(applyance)
-    })
-        .then(response => response.json())
-        .then(() => {
-            navigate(`/all-applyances/${applyance.id}`)
+
+        return fetch(`http://localhost:8088/applyances/${applyance.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(applyance)
         })
+            .then(response => response.json())
+            .then(() => {
+                navigate(`/all-applyances/${applyance.id}`)
+            })
 
     }
 
@@ -53,7 +69,7 @@ export const ApplyanceEdit = () => {
 
         <form className="applyanceForm">
             <h2 className="applyanceForm__title">Edit ApplYance</h2>
-            
+
             {/* fieldset for makeModel */}
             <fieldset>
                 <div className="form-group">
@@ -72,7 +88,7 @@ export const ApplyanceEdit = () => {
                                 copy.makeModel = evt.target.value
                                 editApplyance(copy)
                             }
-                        }>{applyance.makeModel}</textarea> 
+                        }>{applyance.makeModel}</textarea>
                 </div>
             </fieldset>
 
@@ -91,7 +107,7 @@ export const ApplyanceEdit = () => {
                                 copy.picture = evt.target.value
                                 editApplyance(copy)
                             }
-                        }>{applyance.picture}</textarea> 
+                        }>{applyance.picture}</textarea>
                 </div>
             </fieldset>
 
@@ -110,7 +126,38 @@ export const ApplyanceEdit = () => {
                                 copy.manual = evt.target.value
                                 editApplyance(copy)
                             }
-                        }>{applyance.manual}</textarea> 
+                        }>{applyance.manual}</textarea>
+                </div>
+            </fieldset>
+
+            {/* fieldset for tagId */}
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="tagId">Location in the Home: </label>
+                    <select id="tagId"
+                        required autoFocus
+                        className="form-control"
+                        value={applyance.tagId}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...applyance }
+                                copy.tagId = parseInt(evt.target.value)
+                                editApplyance(copy)
+                            }
+                        }
+                    ><option value="0">Select home location</option>
+                        {
+                            tags.map(
+                                (tag) => {
+                                    return <option key={tag.id}
+                                        className="tagDropdown" value={tag.id}>
+                                        {tag.location}
+                                    </option>
+                                }
+                            )
+                        }
+
+                    </select>
                 </div>
             </fieldset>
 
@@ -129,7 +176,7 @@ export const ApplyanceEdit = () => {
                                 copy.purchaseDate = evt.target.value
                                 editApplyance(copy)
                             }
-                        }>{applyance.purchaseDate}</textarea> 
+                        }>{applyance.purchaseDate}</textarea>
                 </div>
             </fieldset>
 
@@ -148,7 +195,7 @@ export const ApplyanceEdit = () => {
                                 copy.purchasePrice = parseFloat(evt.target.value)
                                 editApplyance(copy)
                             }
-                        }>{applyance.purchasePrice}</textarea> 
+                        }>{applyance.purchasePrice}</textarea>
                 </div>
             </fieldset>
 
@@ -167,7 +214,7 @@ export const ApplyanceEdit = () => {
                                 copy.purchaseLocation = evt.target.value
                                 editApplyance(copy)
                             }
-                        }>{applyance.purchaseLocation}</textarea> 
+                        }>{applyance.purchaseLocation}</textarea>
                 </div>
             </fieldset>
 

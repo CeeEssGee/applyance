@@ -17,7 +17,7 @@ export const ApplyanceList = ({ searchTermState }) => {
     
     useEffect(
         () => {
-            fetch(`http://localhost:8088/applyances?_sort=makeModel&_expand=user`)
+            fetch(`http://localhost:8088/applyances?_sort=makeModel&_expand=user&_expand=tag`)
                 .then(response => response.json())
                 .then((applyanceArray) => {
                     setApplyances(applyanceArray)
@@ -70,6 +70,7 @@ export const ApplyanceList = ({ searchTermState }) => {
                         userId={applyance.userId}
                         getAllApplyances={getAllApplyances}
                         applyanceObject={applyance}
+                        location={applyance?.tag?.location}
                     />)
             }
 

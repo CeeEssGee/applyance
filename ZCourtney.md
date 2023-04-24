@@ -128,20 +128,27 @@ MyApplyanceList.js
     Add a deleteButton function
 <!-- Status - works for All Applyances/MyApplyances except I have to refresh when switching between users -->
 
+<!-- Fix bug - Edit/Delete - Refresh between users -->
+Moved variables for localApplyUser and applyUserObject to within the fx
+<!-- Status - bug is squashed -->
+
+<!-- Add location tags -->
+ApplyanceList / MyApplyanceList
+    Update fetch URL and add expand=tag
+    Add location to props and use optional chaining
+Applyance / MyApplyance
+    add location as a parameter and add to JSX
+Update the form to add tags using a dropdown
+Made sure everything works on All and My lists and details
+<!-- Status - Everything seems to be working -->
 
 
 
 <!-- QUESTIONS -->
-On All ApplYances/MyApplyances, why do I have to refresh for the Delete Button to show properly when I switch between users?
 
 
 <!-- TODO's -->
 Rewrite image uploads using Cloudinary
-Flesh out single ApplYance.js page
-Create link to show details plus notes for each item
-    <div>Purchase Date: {applYance.purchaseDate}</div>
-    <div>Purchase Price: {applYance.purchasePrice}</div>
-    <div>Purchase Location: {applYance.purchaseLocation}</div>
 To filter on tags - 01-08
 Move search bar to NavBar? 
 Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
@@ -156,5 +163,5 @@ Admin.js
     Add password
 Delete notes
 Show most recent note on main page?
-Archive
+Archive in addition to delete
 
