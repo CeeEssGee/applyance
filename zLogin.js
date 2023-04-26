@@ -1,23 +1,20 @@
-// tweaked for ApplYances
+// To add a password field to the registration form, you can update the code as follows:
 
+// ```javascript
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Register = (props) => {
-
-    // useState hook to observe initial state (user) and to update the state (setUser) with the properties for users 
     const [user, setUser] = useState({
         email: "",
         firstName: "",
         lastName: "",
+        password: "",
         isAdmin: false
     })
-
-    // useNavigate hook to navigate to another URL
     let navigate = useNavigate()
 
-    // if the user's email is not already in the database, a new user is created
     const registerNewUser = () => {
         return fetch("http://localhost:8088/users", {
             method: "POST",
@@ -29,7 +26,6 @@ export const Register = (props) => {
             .then(res => res.json())
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
-                    // user is saved in local storage
                     localStorage.setItem("apply_user", JSON.stringify({
                         id: createdUser.id,
                         admin: createdUser.isAdmin
@@ -40,7 +36,6 @@ export const Register = (props) => {
             })
     }
 
-    // checks to see if the user's email address is already in the database
     const handleRegister = (e) => {
         e.preventDefault()
         return fetch(`http://localhost:8088/users?email=${user.email}`)
@@ -57,7 +52,6 @@ export const Register = (props) => {
             })
     }
 
-    // if the user's email is not already in the database, a new user is created
     const updateUser = (evt) => {
         const copy = {...user}
         copy[evt.target.id] = evt.target.value
@@ -86,15 +80,12 @@ export const Register = (props) => {
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
                 </fieldset>
-
-                {/* Update this fieldset for password
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
+                    <label htmlFor="password"> Password </label>
                     <input onChange={updateUser}
-                        type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
-                </fieldset> */}
-
+                        type="password" id="password" className="form-control"
+                        placeholder="Password" required />
+                </fieldset>
                 <fieldset>
                     <input onChange={(evt) => {
                         const copy = {...user}
@@ -112,3 +103,5 @@ export const Register = (props) => {
     )
 }
 
+
+// This will add a new password field to the registration form, which will be required for creating a new user. The `updateUser` function has also been updated to handle changes to the password field.

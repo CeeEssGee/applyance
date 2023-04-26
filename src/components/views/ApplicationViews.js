@@ -13,6 +13,7 @@ export const ApplicationViews = () => {
         <Routes>
             <Route path="/" element={
                 <>
+                {/* shows on all pages */}
                     <h1 className="title--main">
                         <Link to={`all-applyances`}><img src="/images/ApplYances.jpg" /></Link>
                         </h1>
@@ -21,6 +22,7 @@ export const ApplicationViews = () => {
                     <Outlet />
                 </>
             }>
+                {/* Home Page */}
                 <Route path="home" element={<HomePage />} />
 
                 {/* All ApplYances Page */}
@@ -40,3 +42,4 @@ export const ApplicationViews = () => {
         </Routes>
     )
 }
+

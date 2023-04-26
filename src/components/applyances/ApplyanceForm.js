@@ -5,6 +5,7 @@ import "./Applyances.css"
 
 export const ApplyanceForm = () => {
 
+    // useState hook to observe the initial state (applyance) and to update the state (update), includes the default properties of the initial state object
     const [applyance, update] = useState({
         makeModel: "",
         picture: "",
@@ -15,15 +16,18 @@ export const ApplyanceForm = () => {
         tagId: ""
     })
 
-
+    // useNavigate hook to navigate to another URL
     const navigate = useNavigate()
 
-    // get apply user object out of local storage
-    const localApplyUser = localStorage.getItem("apply_user") // a string
-    const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
-    
+    // get apply user object out of local storage as a string
+    const localApplyUser = localStorage.getItem("apply_user")
+    // parse the string into an object with 2 keys (id and admin)
+    const applyUserObject = JSON.parse(localApplyUser)
+
+    // useState hook to observe the initial state (tags) and to update the state (setTags)
     const [tags, setTags] = useState([])
 
+    // useEffect hook that fetches the tags sorted by location so they will show in alphabetical order
     useEffect(
         () => {
             fetch(`http://localhost:8088/tags?_sort=location`)
@@ -35,10 +39,9 @@ export const ApplyanceForm = () => {
         []
     )
 
+    // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
-        event.preventDefault()
-
-
+        event.preventDefault() // this keeps the page from automatically reloading
 
         /* Sample ApplYance to match for data to send to API
             {
@@ -54,8 +57,9 @@ export const ApplyanceForm = () => {
             }
         */
 
+        // JavaScript object with the required properties to send to the API
         const dataToSendToAPI = {
-            userId: applyUserObject.id,
+            userId: applyUserObject.id, // obtained from the login info
             makeModel: applyance.makeModel,
             picture: applyance.picture,
             manual: applyance.manual,
@@ -65,6 +69,7 @@ export const ApplyanceForm = () => {
             tagId: applyance.tagId
         }
 
+        // fetch POST call to post a new object to the database
         return fetch(`http://localhost:8088/applyances`, {
             method: "POST",
             headers: {
@@ -74,12 +79,13 @@ export const ApplyanceForm = () => {
         })
             .then(response => response.json())
             .then(() => {
+                // display the my-applyances URL
                 navigate("/my-applyances")
             })
     }
 
 
-
+    // JSX to render what displays when clicking the Add New Applyance link in the NavBar (http://localhost:3000/new-applyance)
     return (
         <form className="applyanceForm">
             <h2 className="applyanceForm__title">New ApplYance</h2>
@@ -144,8 +150,6 @@ export const ApplyanceForm = () => {
                 </div>
             </fieldset>
 
-
-
             {/* fieldset for tagId */}
             <fieldset>
                 <div className="form-group">
@@ -166,7 +170,7 @@ export const ApplyanceForm = () => {
                             tags.map(
                                 (tag) => {
                                     return <option key={tag.id}
-                                    className="tagDropdown" value={tag.id}>
+                                        className="tagDropdown" value={tag.id}>
                                         {tag.location}
                                     </option>
                                 }
@@ -176,8 +180,6 @@ export const ApplyanceForm = () => {
                     </select>
                 </div>
             </fieldset>
-
-
 
             {/* fieldset for purchase date */}
             <fieldset>
@@ -240,6 +242,7 @@ export const ApplyanceForm = () => {
             </fieldset>
 
             <button
+                // References the function above
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
                 Save ApplYance
@@ -247,3 +250,19 @@ export const ApplyanceForm = () => {
         </form>
     )
 }
+
+/*
+
+The code is a form component for creating a new appliance record. The form has input fields for "make and model", "picture", "manual", "purchase date", "purchase price", "purchase location" and "location in the home".
+
+The form fields are populated with data from a state variable "applyance" that is initialized with empty strings for all fields except "purchasePrice" which is initialized with 0. 
+
+The form uses the "useState" hook to manage state for "applyance" and the "useNavigate" hook from "react-router-dom" to navigate to a different page after the form is submitted.
+
+The form also uses the "useEffect" hook to fetch the list of "tags" from an API endpoint when the component is mounted. The fetched data is stored in a state variable "tags".
+
+When the form is submitted, the values from the form fields are stored in an object called "dataToSendToAPI" which is then sent to the API endpoint using the "fetch" function with a "POST" request method.
+
+After a successful API call, the user is redirected to the "my-applyances" page.
+
+*/

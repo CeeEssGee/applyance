@@ -153,6 +153,9 @@ Now need to figure out how to add new notes using a modal? Pop out window?
 
 
 <!-- QUESTIONS -->
+After saving a modal note, my page doesn't reload properly without reload  function.
+How do I get my cursor to automatically be positioned inthe text box without having to click in it?
+
 
 
 <!-- TODO's -->
@@ -172,4 +175,5 @@ Admin.js
 Delete notes
 Show most recent note on main page?
 Archive in addition to delete
+Consider changing purchase notes to model number and serial number
 
