@@ -145,17 +145,27 @@ Made sure everything works on All and My lists and details
 <!-- Show notes to each appliance -->
 Updated My and All ApplyanceDetails modules to show notes for that individual appliance.
 Create an Add New Note button on both modules
+<!-- Status - Notes show -->
 
-<!-- Where I left off -->
-Now need to figure out how to add new notes using a modal? Pop out window?
-
-
+<!-- Pop-Out modal to add notes -->
+Modal works, but I'd like to figure out how to get my mouse to position automatically within the box
+<!-- Status - Modal works -->
 
 
 <!-- QUESTIONS -->
-After saving a modal note, my page doesn't reload properly without reload  function.
 How do I get my cursor to automatically be positioned inthe text box without having to click in it?
+Can I change my project details without approval? 
+    Want to remove the purchase info and put model# and serial# on the details instead
 
+<!-- On Modal, get cursor to pop to the text area -->
+Josh - cursor in test area:
+    import useRef from react
+    const inputRef = useRef(null);
+    ref={inputRef}
+Did not work - gave me the below link:
+https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes
+    complicated but doable
+<!-- Status - I couldn't get it to work -->
 
 
 <!-- TODO's -->

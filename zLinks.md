@@ -9,3 +9,6 @@ https://drive.google.com/file/d/1fIf5DFV-vGRdmX5geTWHjEsEV3Mh7Uij/view?usp=share
 GE Dishwasher
 /images/GEDishwasher.jpg
 https://drive.google.com/file/d/1HgtkEOiioMQayHgxUcV2f9rcNuHbz16A/view?usp=share_link
+
+Ninja Foodi
+/images/NinjaFoodi.jpg

@@ -1,8 +1,9 @@
 // need to add a modal input form
 import { useParams, Link, useNavigate } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, forwardRef } from "react"
 import "./Applyances.css"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useRef } from "react";
 
 
 
@@ -21,15 +22,28 @@ export const ApplyanceDetails = () => {
     // useState hook to observe the initial state (notes) and to update the state (setNotes)
     const [notes, setNotes] = useState([])
 
-
+    
 // ***** MODAL *****
+
+    // const inputRef = useRef(null); // Josh - cursor in text area
+    
+    // from website Josh suggested
+        // const MyInput = forwardRef((props, ref) => {
+        //     return <input {...props} ref={ref} />;
+        // });
+
+        // const inputRef = useRef(null)
+
     // useState hook to observe the initial state (modal) and to update the state (setModal) - the default state is false (do not show the Modal)
     const [modal, setModal] = useState(false);
 
     // function, if invoked, the modal does not show
     const handleClose = () => setModal(false)
     // function, if invoked, the model shows
-    const handleOpen = () => setModal(true)
+    const handleOpen = () => {
+        setModal(true)
+        // inputRef.current.focus() // Josh - cursor in text area / from website
+    }
 
     // functionality for the close button on the modal (X in upper right), which closes the modal by invoking the handleClose button
     const closeBtn = (
@@ -236,12 +250,12 @@ export const ApplyanceDetails = () => {
                                 <p className="modal-label">Please enter your notes</p>
                                 <Input
                                     required autoFocus
+                                    // ref={inputRef} // Josh - cursor in text area and website
                                     type="textarea"
                                     className="form-control"
                                     style={{
                                         height: "10rem"
                                     }}
-                                    // value={note.description} 
                                     onChange={
                                         (evt) => {
                                             const copy = { ...note }
