@@ -251,18 +251,3 @@ export const ApplyanceForm = () => {
     )
 }
 
-/*
-
-The code is a form component for creating a new appliance record. The form has input fields for "make and model", "picture", "manual", "purchase date", "purchase price", "purchase location" and "location in the home".
-
-The form fields are populated with data from a state variable "applyance" that is initialized with empty strings for all fields except "purchasePrice" which is initialized with 0. 
-
-The form uses the "useState" hook to manage state for "applyance" and the "useNavigate" hook from "react-router-dom" to navigate to a different page after the form is submitted.
-
-The form also uses the "useEffect" hook to fetch the list of "tags" from an API endpoint when the component is mounted. The fetched data is stored in a state variable "tags".
-
-When the form is submitted, the values from the form fields are stored in an object called "dataToSendToAPI" which is then sent to the API endpoint using the "fetch" function with a "POST" request method.
-
-After a successful API call, the user is redirected to the "my-applyances" page.
-
-*/
