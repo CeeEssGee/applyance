@@ -2,6 +2,7 @@ import "./HomePage.css"
 
 export const HomePage = () => {
 
+    // JSX to render what displays on the home URL
     return <>
     <section className="homeSection">
         <div className="homeDiv">Welcome to the ApplYances site.</div>
@@ -12,6 +13,8 @@ export const HomePage = () => {
 </div>
 
 <div className="homeDiv">Multiple notes can be added for each ApplYance to indicate warranty information, repairs, routine maintenance, or even to keep track of when you let a friend borrow your blender for a party!</div>
+
 </section>
 </>
 }
+
