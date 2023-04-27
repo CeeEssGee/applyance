@@ -168,11 +168,16 @@ Need to Update:
         Removed purchase information
     MyApplyanceList
         Removed purchase information
+    database.json
+        removed purchase information
+Status - seems to be working fine
 
 
 <!-- QUESTIONS -->
-How do I get my cursor to automatically be positioned inthe text box without having to click in it?
-
+Modal works, but I'd like to figure out how to get my mouse to position automatically within the box
+How do I get my cursor to automatically be positioned inthe text box without having to click in it? 
+Can I change my project details without approval? Want to remove the purchase info and put model# and serial# on the details instead
+Josh - cursor in test area: import useRef from react const inputRef = useRef(null); ref={inputRef} Did not work - gave me the below link: https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes complicated but doable
 
 
 <!-- TODO's -->
@@ -193,4 +198,15 @@ Delete notes
 Show most recent note on main page?
 Archive in addition to delete
 Consider changing purchase notes to model number and serial number
-
+Rewrite image uploads using Cloudinary 
+Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46 
+Font - Agency 
+Add alt's for images: alt={'Photo of ' + applyance.makeModel} 
+To filter on tags - 01-08 
+Move search bar to NavBar? 
+Register.js Add password 
+Admin.js Add password 
+Delete notes 
+Show most recent note on main page? 
+Archive in addition to delete 
+Stepper for the form?
