@@ -200,12 +200,9 @@ export const ApplyanceDetails = () => {
             </div>
 
             <div>
-                <div>Owner: {applyance?.user?.firstName}</div>
-                <div className="purchaseDiv">Purchase Information:
-                    <div>Purchase Date: {applyance.purchaseDate}</div>
-                    <div>Purchase Price: ${applyance.purchasePrice}</div>
-                    <div>Purchase Location: {applyance.purchaseLocation}</div>
-                </div>
+                <div>Owner:  {applyance?.user?.firstName}</div>
+                <div>Model Number:  {applyance.modelNumber}</div>
+                <div>Serial Number:  {applyance.serialNumber}</div>
             </div>
 
             <footer>

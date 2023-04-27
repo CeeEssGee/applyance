@@ -142,18 +142,35 @@ Update the form to add tags using a dropdown
 Made sure everything works on All and My lists and details
 <!-- Status - Everything seems to be working -->
 
-<!-- Show notes to each appliance -->
+<!-- Show notes and add notes to each appliance -->
 Updated My and All ApplyanceDetails modules to show notes for that individual appliance.
 Create an Add New Note button on both modules
+Modal pop-out works, but cursor doesn't automatically shift to the textarea
+<!-- Status - We're going to leave it as is -->
 
-<!-- Where I left off -->
-Now need to figure out how to add new notes using a modal? Pop out window?
-
-
+<!-- Update purchase info to model number and serial number -->
+Need to Update:
+    database.json
+        Added model number and serial number
+        Left purchase information for now
+    ApplyanceDetails
+        Added model number and serial number
+        Removed purchase information
+    ApplyanceEdit
+        Added model number and serial number
+        Removed purchase information
+    ApplyanceForm
+    ApplyanceList
+        Removed purchase information
+    HomePage
+    MyApplyanceDetails
+        Added model number and serial number
+        Removed purchase information
+    MyApplyanceList
+        Removed purchase information
 
 
 <!-- QUESTIONS -->
-After saving a modal note, my page doesn't reload properly without reload  function.
 How do I get my cursor to automatically be positioned inthe text box without having to click in it?
 
 

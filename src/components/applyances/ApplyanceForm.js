@@ -10,9 +10,8 @@ export const ApplyanceForm = () => {
         makeModel: "",
         picture: "",
         manual: "",
-        purchaseDate: "",
-        purchasePrice: 0,
-        purchaseLocation: "",
+        modelNumber: "",
+        serialNumber: "",
         tagId: ""
     })
 
@@ -49,9 +48,8 @@ export const ApplyanceForm = () => {
           "makeModel": "Silhouette Cameo4",
           "picture": "images/Cameo4.jpg",
           "manual": "https://drive.google.com/file/d/1x_i-qIs-R_1qpDt6Hu5Y4psMsyWINwve/view?usp=share_link",
-          "purchaseDate": "2022-05-27",
-          "purchasePrice": 339.99,
-          "purchaseLocation": "Amazon",
+          "modelNumber": "akb52"
+          "serialNumber": "258s23056",
           "userId": 1,
            "tagId": 5
             }
@@ -63,9 +61,8 @@ export const ApplyanceForm = () => {
             makeModel: applyance.makeModel,
             picture: applyance.picture,
             manual: applyance.manual,
-            purchaseDate: applyance.purchaseDate,
-            purchasePrice: applyance.purchasePrice,
-            purchaseLocation: applyance.purchaseLocation,
+            modelNumber: applyance.modelNumber,
+            serialNumber: applyance.serialNumber,
             tagId: applyance.tagId
         }
 
@@ -181,60 +178,40 @@ export const ApplyanceForm = () => {
                 </div>
             </fieldset>
 
-            {/* fieldset for purchase date */}
+            {/* fieldset for modelNumber */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="purchaseDate">Purchase Date: </label>
-                    <input
-                        required autoFocus
-                        type="date"
-                        className="form-control"
-                        placeholder="Enter purchase date"
-                        value={applyance.purchaseDate}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.purchaseDate = evt.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-
-            {/* fieldset for purchase price */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="purchasePrice">Purchase Price: </label>
-                    <input
-                        required autoFocus
-                        type="number"
-                        className="form-control"
-                        placeholder="Enter purchase price"
-                        value={applyance.purchasePrice}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.purchasePrice = parseFloat(evt.target.value)
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-
-            {/* fieldset for location */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="location">Purchase Location: </label>
+                    <label htmlFor="modelNumber">Model Number: </label>
                     <input
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Enter purchase location"
-                        value={applyance.purchaseLocation}
+                        placeholder="Enter model number"
+                        value={applyance.modelNumber}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
-                                copy.purchaseLocation = evt.target.value
+                                copy.modelNumber = evt.target.value
+                                update(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+
+            {/* fieldset for serial number */}
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="serialNumber">Serial Number: </label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter serial number"
+                        value={applyance.serialNumber}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...applyance }
+                                copy.serialNumber = evt.target.value
                                 update(copy)
                             }
                         } />

@@ -83,8 +83,7 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
                         id={applyance.id}
                         makeModel={applyance.makeModel}
                         picture={applyance.picture}
-                        manual={applyance.manual}
-                        purchaseDate={applyance.purchaseDate}
+                        manual={applyance.manual}                        
                         userId={applyance.userId}
                         getAllApplyances={getAllApplyances}
                         applyanceObject={applyance}

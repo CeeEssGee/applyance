@@ -15,9 +15,8 @@ export const ApplyanceEdit = () => {
         makeModel: "", // default is empty string
         picture: "", // default is empty string
         manual: "", // default is empty string
-        purchaseDate: "", // default is empty string
-        purchasePrice: 0, // default is zero
-        purchaseLocation: "", // default is empty string
+        modelNumber: "", // default is empty string
+        serialNumber: "", // default is empty string
         tagId: "" // default is empty string
     })
 
@@ -167,60 +166,41 @@ export const ApplyanceEdit = () => {
                 </div>
             </fieldset>
 
-            {/* fieldset for purchase date */}
+            {/* fieldset for model number */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="purchaseDate">Purchase Date: </label>
-                    <textarea
-                        required autoFocus
-                        type="date"
-                        className="form-control"
-                        value={applyance.purchaseDate}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.purchaseDate = evt.target.value
-                                editApplyance(copy)
-                            }
-                        }>{applyance.purchaseDate}</textarea>
-                </div>
-            </fieldset>
-
-            {/* fieldset for purchase price */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="purchasePrice">Purchase Price: </label>
-                    <textarea
-                        required autoFocus
-                        type="number"
-                        className="form-control"
-                        value={applyance.purchasePrice}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.purchasePrice = parseFloat(evt.target.value)
-                                editApplyance(copy)
-                            }
-                        }>{applyance.purchasePrice}</textarea>
-                </div>
-            </fieldset>
-
-            {/* fieldset for location */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="location">Purchase Location: </label>
+                    <label htmlFor="modelNumber">Model Number: </label>
                     <textarea
                         required autoFocus
                         type="text"
                         className="form-control"
-                        value={applyance.purchaseLocation}
+                        value={applyance.modelNumber}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
-                                copy.purchaseLocation = evt.target.value
+                                copy.modelNumber = evt.target.value
                                 editApplyance(copy)
                             }
-                        }>{applyance.purchaseLocation}</textarea>
+                        }>{applyance.modelNumber}</textarea>
+                </div>
+            </fieldset>
+
+            {/* fieldset for serialNumber */}
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="location">Serial Numeber: </label>
+                    <textarea
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        value={applyance.serialNumber}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...applyance }
+                                copy.serialNumber = evt.target.value
+                                editApplyance(copy)
+                            }
+                        }>{applyance.serialNumber}</textarea>
                 </div>
             </fieldset>
 
