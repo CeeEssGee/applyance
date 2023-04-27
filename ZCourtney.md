@@ -170,14 +170,16 @@ https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-compone
 
 <!-- TODO's -->
 Rewrite image uploads using Cloudinary
-To filter on tags - 01-08
-Move search bar to NavBar? 
 Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
 Font - Agency
+Add alt's for images: alt={'Photo of ' + applyance.makeModel}
+Consider changing purchase notes to model number and serial number
 
 
 
 <!-- STRETCH -->
+To filter on tags - 01-08
+Move search bar to NavBar? 
 Register.js
     Add password
 Admin.js
@@ -185,5 +187,5 @@ Admin.js
 Delete notes
 Show most recent note on main page?
 Archive in addition to delete
-Consider changing purchase notes to model number and serial number
+Stepper for the form?
 
