@@ -1,7 +1,9 @@
+// with Cloudinary
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
-// import { Cloudinary } from "@cloudinary/url-gen";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 
 
@@ -52,7 +54,7 @@ export const ApplyanceForm = () => {
           "picture": "images/Cameo4.jpg",
           "manual": "https://drive.google.com/file/d/1x_i-qIs-R_1qpDt6Hu5Y4psMsyWINwve/view?usp=share_link",
           "modelNumber": "N/A"
-          "serialNumber": "R201F431338",
+          "serialNumber": "N/A",
           "userId": 1,
            "tagId": 5
             }
@@ -86,21 +88,21 @@ export const ApplyanceForm = () => {
 
 // ***** BEGIN CLOUDINARY CODE ******
 
-// const myWidget = window.cloudinary.createUploadWidget(
-//     {
-//       cloudName: "dq4w2zwr2",
-//       uploadPreset: "fe_capstone"
-//     },
-//     (error, result) => {
-//       if (!error && result && result.event === "success") {
-//         console.log("Done! Here is the image info: ", result.info);
-//       }
-//     }
-//   );
+const myWidget = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "dq4w2zwr2",
+      uploadPreset: "fe_capstone"
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+      }
+    }
+  );
 
-//   const handleUploadPictureButton = (event) => {
-//     myWidget.open()
-//   }
+  const handleUploadPictureButton = (event) => {
+    myWidget.open()
+  }
 
   // ***** END CLOUDINARY CODE ******
 
@@ -129,7 +131,7 @@ export const ApplyanceForm = () => {
                 </div>
             </fieldset>
 
-            {/* fieldset for picture */}
+            {/* fieldset for picture
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="picture">Picture: </label>
@@ -147,11 +149,11 @@ export const ApplyanceForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+            </fieldset> */}
 
 
             {/* ***** CLOUDINARY fieldset for picture */}
-            {/* <fieldset>
+            <fieldset>
                 <div className="form-group">
                     <button onClick={(clickEvent) => handleUploadPictureButton(clickEvent)}
 
@@ -173,7 +175,7 @@ export const ApplyanceForm = () => {
                             }
                         } />
                 </div>
-            </fieldset> */}
+            </fieldset>
 
             {/* fieldset for manual */}
             <fieldset>

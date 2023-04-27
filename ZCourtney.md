@@ -173,6 +173,13 @@ Need to Update:
 Status - seems to be working fine
 
 
+<!-- Cloudinary Questions -->
+Scripts for HTML - Where do we put it?
+    <script
+    src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"
+    ></script>
+
+
 <!-- QUESTIONS -->
 Modal works, but I'd like to figure out how to get my mouse to position automatically within the box
 How do I get my cursor to automatically be positioned inthe text box without having to click in it? 

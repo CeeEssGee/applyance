@@ -7,7 +7,11 @@ import { ApplicationViews } from "./components/views/ApplicationViews";
 import { Login } from "./components/auth/Login";
 import { NavBar } from "./components/nav/NavBar";
 
+
 export const Applyances = () => {
+
+
+
 	return <Routes>
 		<Route path="/login" element={<Login />} />
 		<Route path="/register" element={<Register />} />
