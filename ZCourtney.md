@@ -170,44 +170,42 @@ Need to Update:
         Removed purchase information
     database.json
         removed purchase information
-Status - seems to be working fine
+<!-- Status - seems to be working fine -->
+
+
+<!-- Cloudinary Questions -->
+Scripts for HTML - Where do we put it?
+    <script
+    src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"
+    ></script>
+I was able to get the upload button to show, but that was it. I moved all my files to a Zcloudinary directory and kept existing code. Committed and moved on.
+<!-- Status - not functioning -->
 
 
 <!-- QUESTIONS -->
-Modal works, but I'd like to figure out how to get my mouse to position automatically within the box
-How do I get my cursor to automatically be positioned inthe text box without having to click in it? 
-Can I change my project details without approval? Want to remove the purchase info and put model# and serial# on the details instead
-Josh - cursor in test area: import useRef from react const inputRef = useRef(null); ref={inputRef} Did not work - gave me the below link: https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes complicated but doable
 
 
 <!-- TODO's -->
-Rewrite image uploads using Cloudinary
-To filter on tags - 01-08
-Move search bar to NavBar? 
-Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
-Font - Agency
+Styling
+    Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46 
+    Font - Agency 
+    Add alt's for images: alt={'Photo of ' + applyance.makeModel} 
 After adding a new applyance, stay on that applyance details page
 
-
+<!-- CLOUDINARY -->
+Incomplete - was able to get the upload button to render and could upload photos, but that was it
 
 <!-- STRETCH -->
-Register.js
-    Add password
-Admin.js
-    Add password
+Add password
 Delete notes
+Edit notes
 Show most recent note on main page?
-Archive in addition to delete
-Consider changing purchase notes to model number and serial number
-Rewrite image uploads using Cloudinary 
-Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46 
-Font - Agency 
-Add alt's for images: alt={'Photo of ' + applyance.makeModel} 
-To filter on tags - 01-08 
-Move search bar to NavBar? 
-Register.js Add password 
-Admin.js Add password 
-Delete notes 
-Show most recent note on main page? 
-Archive in addition to delete 
+Archive applyances?
+Filter on tags 
 Stepper for the form?
+
+<!-- MODAL STRETCH -->
+Modal works
+    How do I get my cursor to automatically be positioned inthe text box without having to click in it? 
+    Josh - cursor in test area: import useRef from react const inputRef = useRef(null); ref={inputRef} Did not work - gave me the below link (complicated but doable):
+        https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes 
