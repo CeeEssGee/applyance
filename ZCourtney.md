@@ -142,44 +142,54 @@ Update the form to add tags using a dropdown
 Made sure everything works on All and My lists and details
 <!-- Status - Everything seems to be working -->
 
-<!-- Show notes to each appliance -->
+<!-- Show notes and add notes to each appliance -->
 Updated My and All ApplyanceDetails modules to show notes for that individual appliance.
 Create an Add New Note button on both modules
-<!-- Status - Notes show -->
+Modal pop-out works, but cursor doesn't automatically shift to the textarea
+<!-- Status - We're going to leave it as is -->
 
-<!-- Pop-Out modal to add notes -->
-Modal works, but I'd like to figure out how to get my mouse to position automatically within the box
-<!-- Status - Modal works -->
+<!-- Update purchase info to model number and serial number -->
+Need to Update:
+    database.json
+        Added model number and serial number
+        Left purchase information for now
+    ApplyanceDetails
+        Added model number and serial number
+        Removed purchase information
+    ApplyanceEdit
+        Added model number and serial number
+        Removed purchase information
+    ApplyanceForm
+    ApplyanceList
+        Removed purchase information
+    HomePage
+    MyApplyanceDetails
+        Added model number and serial number
+        Removed purchase information
+    MyApplyanceList
+        Removed purchase information
+    database.json
+        removed purchase information
+Status - seems to be working fine
 
 
 <!-- QUESTIONS -->
-How do I get my cursor to automatically be positioned inthe text box without having to click in it?
-Can I change my project details without approval? 
-    Want to remove the purchase info and put model# and serial# on the details instead
-
-<!-- On Modal, get cursor to pop to the text area -->
-Josh - cursor in test area:
-    import useRef from react
-    const inputRef = useRef(null);
-    ref={inputRef}
-Did not work - gave me the below link:
-https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes
-    complicated but doable
-<!-- Status - I couldn't get it to work -->
+Modal works, but I'd like to figure out how to get my mouse to position automatically within the box
+How do I get my cursor to automatically be positioned inthe text box without having to click in it? 
+Can I change my project details without approval? Want to remove the purchase info and put model# and serial# on the details instead
+Josh - cursor in test area: import useRef from react const inputRef = useRef(null); ref={inputRef} Did not work - gave me the below link: https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes complicated but doable
 
 
 <!-- TODO's -->
 Rewrite image uploads using Cloudinary
+To filter on tags - 01-08
+Move search bar to NavBar? 
 Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46
 Font - Agency
-Add alt's for images: alt={'Photo of ' + applyance.makeModel}
-Consider changing purchase notes to model number and serial number
 
 
 
 <!-- STRETCH -->
-To filter on tags - 01-08
-Move search bar to NavBar? 
 Register.js
     Add password
 Admin.js
@@ -187,5 +197,16 @@ Admin.js
 Delete notes
 Show most recent note on main page?
 Archive in addition to delete
+Consider changing purchase notes to model number and serial number
+Rewrite image uploads using Cloudinary 
+Color scheme - https://coolors.co/aa8f66-ed9b40-ffeedb-61c9a8-ba3b46 
+Font - Agency 
+Add alt's for images: alt={'Photo of ' + applyance.makeModel} 
+To filter on tags - 01-08 
+Move search bar to NavBar? 
+Register.js Add password 
+Admin.js Add password 
+Delete notes 
+Show most recent note on main page? 
+Archive in addition to delete 
 Stepper for the form?
-
