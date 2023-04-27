@@ -37,17 +37,6 @@ export const ApplyanceForm = () => {
         },
         []
     )
-
-    useEffect(
-    () => {
-    fetch(`http://localhost:8088/applyances`) // do you need a return
-    .then(response => response.json())
-    .then((applyanceArray) => {
-        const newApplyanceId = applyanceArray.length
-    })
-    },
-    [applyances] //could be blank
-    )
     
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
@@ -89,7 +78,7 @@ export const ApplyanceForm = () => {
             .then(response => response.json())
             .then(() => {
                 // display the my-applyances URL
-                navigate(`/my-applyances/${newApplyanceId}`)
+                navigate(`/my-applyances`)
             })
     }
 
@@ -239,4 +228,3 @@ export const ApplyanceForm = () => {
         </form>
     )
 }
-

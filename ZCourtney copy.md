@@ -189,7 +189,6 @@ Font - Agency
 After adding a new applyance, stay on that applyance details page
 
 
-
 <!-- STRETCH -->
 Register.js
     Add password
