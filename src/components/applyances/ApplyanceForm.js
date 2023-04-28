@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+// parent to ApplyancePicture
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
-
+import { UploadWidget } from "./UploadWidget";
+// import { ApplyancePicture } from "./ApplyancePicture";
 
 export const ApplyanceForm = () => {
 
@@ -14,6 +16,27 @@ export const ApplyanceForm = () => {
         serialNumber: "",
         tagId: ""
     })
+
+    // ***** Cloudinary code
+
+    const UploadWidget = (clickEvent) => {
+        clickEvent.preventDefault()
+        let widget = window.cloudinary.createUploadWidget({
+            cloudName: "dq4w2zwr2",
+            uploadPreset: "fe_capstone"
+        }, 
+            (error, result) => {
+                if (!error && result && result.event === "success") {
+                    console.log(result.info.url)
+                    const copy = { ...applyance }
+                    copy.picture = result.info.url
+                    update(copy)
+                }
+            });
+            widget.open()
+        }
+
+    // ***** End Cloudinary code
 
     // useNavigate hook to navigate to another URL
     const navigate = useNavigate()
@@ -38,10 +61,18 @@ export const ApplyanceForm = () => {
         []
     )
     
+    const [buttonPressed, setButtonPressed ] = useState(false)
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
         event.preventDefault() // this keeps the page from automatically reloading
+
+        // to send the signal to ApplyancePicture
+        if (buttonPressed === true) {
+            setButtonPressed(false)
+        } else {
+            setButtonPressed(true)
+        }
 
         /* Sample ApplYance to match for data to send to API
             {
@@ -110,8 +141,11 @@ export const ApplyanceForm = () => {
 
             {/* fieldset for picture */}
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="picture">Picture: </label>
+                    <div className="form-group">
+                        <button
+                            onClick={(clickEvent) => UploadWidget(clickEvent)}
+                        >Upload Picture</button>
+                    {/* <label htmlFor="picture">Picture: </label>
                     <input
                         required autoFocus
                         type="text"
@@ -124,9 +158,10 @@ export const ApplyanceForm = () => {
                                 copy.picture = evt.target.value
                                 update(copy)
                             }
-                        } />
-                </div>
+                        } /> */}
+                </div>   
             </fieldset>
+            
 
             {/* fieldset for manual */}
             <fieldset>

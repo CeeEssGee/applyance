@@ -183,6 +183,7 @@ export const ApplyanceDetails = () => {
                         })
                             .then(() => {
                                 getAllApplyances()
+                                navigate(`/all-applyances`)
                             })
                     }}
 
