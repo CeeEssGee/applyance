@@ -1,14 +1,15 @@
+// parent to ApplyancePicture
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
-
+import { ApplyancePicture } from "./ApplyancePicture";
 
 export const ApplyanceForm = () => {
 
     // useState hook to observe the initial state (applyance) and to update the state (update), includes the default properties of the initial state object
     const [applyance, update] = useState({
         makeModel: "",
-        picture: "",
+        // picture: "",
         manual: "",
         modelNumber: "",
         serialNumber: "",
@@ -38,10 +39,18 @@ export const ApplyanceForm = () => {
         []
     )
     
+    const [buttonPressed, setButtonPressed ] = useState(false)
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
         event.preventDefault() // this keeps the page from automatically reloading
+
+        // to send the signal to ApplyancePicture
+        if (buttonPressed === true) {
+            setButtonPressed(false)
+        } else {
+            setButtonPressed(true)
+        }
 
         /* Sample ApplYance to match for data to send to API
             {
@@ -60,7 +69,7 @@ export const ApplyanceForm = () => {
         const dataToSendToAPI = {
             userId: applyUserObject.id, // obtained from the login info
             makeModel: applyance.makeModel,
-            picture: applyance.picture,
+            // picture: applyance.picture,
             manual: applyance.manual,
             modelNumber: applyance.modelNumber,
             serialNumber: applyance.serialNumber,
@@ -110,23 +119,11 @@ export const ApplyanceForm = () => {
 
             {/* fieldset for picture */}
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="picture">Picture: </label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter picture URL for new appliance"
-                        value={applyance.picture}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.picture = evt.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
+                        <ApplyancePicture 
+                        // passed as a prop so AppPic can watch for the button press
+                            buttonPressed={buttonPressed}/>
             </fieldset>
+            
 
             {/* fieldset for manual */}
             <fieldset>

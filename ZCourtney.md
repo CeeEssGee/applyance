@@ -181,6 +181,24 @@ Scripts for HTML - Where do we put it?
 I was able to get the upload button to show, but that was it. I moved all my files to a Zcloudinary directory and kept existing code. Committed and moved on.
 <!-- Status - not functioning -->
 
+<!-- Move upload image URL to a separate module -->
+Separate module created, picture now posts in an separate object
+    {
+      "userId": 2,
+      "makeModel": "Test",
+      "manual": "https://m.media-amazon.com/images/I/61OVQFXu8mL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "modelNumber": "23425",
+      "serialNumber": "5363467",
+      "tagId": 2,
+      "id": 21
+    },
+    {
+      "picture": "https://m.media-amazon.com/images/I/61OVQFXu8mL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "id": 22
+    }
+<!-- Check with Josh to see if that's what we meant to do -->
+
+
 
 <!-- QUESTIONS -->
 
@@ -191,6 +209,7 @@ Styling
     Font - Agency 
     Add alt's for images: alt={'Photo of ' + applyance.makeModel} 
 After adding a new applyance, stay on that applyance details page
+Logic on picture for not submitting an incomplete form
 
 <!-- CLOUDINARY -->
 Incomplete - was able to get the upload button to render and could upload photos, but that was it
