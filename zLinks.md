@@ -1,14 +1,13 @@
-Maytag Washer
-/images/MaytagWasher.jpg
-https://drive.google.com/file/d/17zVvObQg5Z1dy9W8cz9UtjzUvQM1wSMY/view?usp=share_link
+All-Clad Multi-Cooker
+https://assets.wsimgs.com/wsimgs/ab/images/dp/wcm/202314/0752/img32o.jpg
+https://www.williams-sonoma.com/netstorage/pdf/113791-All-Clad-7Qt-Slow-Cooker-Gourmet-Plus-Manual.pdf
+Serie SC04-A
+N/A
 
-Maytag Dryer
-/images/MaytagDryer.jpg
-https://drive.google.com/file/d/1fIf5DFV-vGRdmX5geTWHjEsEV3Mh7Uij/view?usp=share_link
+Microsoft Xbox Series X
+/images/MicrosoftXboxSeriesX.jpg
+https://drive.google.com/file/d/1m4V5q7wkvhfz6NnmsxgWDeG_zSb5IOCX/view?usp=sharing
+N/A
+N/A
 
-GE Dishwasher
-/images/GEDishwasher.jpg
-https://drive.google.com/file/d/1HgtkEOiioMQayHgxUcV2f9rcNuHbz16A/view?usp=share_link
-
-Ninja Foodi
-/images/NinjaFoodi.jpg
+Sony Playstation
