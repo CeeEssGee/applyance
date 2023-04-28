@@ -58,7 +58,7 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
             const myApplyances = applyances.filter(applyance => applyance.userId === applyUserObject.id)
             setFiltered(myApplyances)
         },
-        [applyances] //could be blank
+        [applyances] 
     )
 
     // useEffect hook is used to update filteredApplyances when the searchTermState changes. Filters the applyances array based on teh search term u sing the filter method and sets the filtered array to filtererdApplyances using the setFiltered function
@@ -69,7 +69,7 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
             })
             setFiltered(mySearchedApplyances)
         },
-        [mySearchTermState] //could be blank
+        [mySearchTermState] 
     )
 
 
