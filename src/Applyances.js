@@ -17,8 +17,10 @@ export const Applyances = () => {
 				<>
 					<NavBar />
 					<ApplicationViews />
+			
 				</>
 			</Authorized>
+			
 
 		} />
 	</Routes>

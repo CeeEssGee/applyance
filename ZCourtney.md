@@ -196,7 +196,11 @@ Separate module created, picture now posts in an separate object
       "picture": "https://m.media-amazon.com/images/I/61OVQFXu8mL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
       "id": 22
     }
-<!-- Check with Josh to see if that's what we meant to do -->
+Pushed branch to Github and continued on with Cloudinary
+<!-- Check with Josh to see if that's what we meant to do... I think so because we are going to be creating a different object on Cloudinary -->
+
+
+
 
 
 

@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
+import { UploadWidget } from "./UploadWidget";
+// import { UploadWidget } from "./UploadWidget";
 
 // when the button is pressed on ApplyanceForm, it will run the fx and then useEffect will be run and POST to the API
 export const ApplyancePicture = ({ buttonPressed }) => {
@@ -52,6 +54,7 @@ export const ApplyancePicture = ({ buttonPressed }) => {
                                 update(copy)
                             }
                         } />
+                        <UploadWidget />
                 </div>
             
             </>

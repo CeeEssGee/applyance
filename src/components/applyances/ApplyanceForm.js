@@ -1,20 +1,42 @@
 // parent to ApplyancePicture
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
-import { ApplyancePicture } from "./ApplyancePicture";
+import { UploadWidget } from "./UploadWidget";
+// import { ApplyancePicture } from "./ApplyancePicture";
 
 export const ApplyanceForm = () => {
 
     // useState hook to observe the initial state (applyance) and to update the state (update), includes the default properties of the initial state object
     const [applyance, update] = useState({
         makeModel: "",
-        // picture: "",
+        picture: "",
         manual: "",
         modelNumber: "",
         serialNumber: "",
         tagId: ""
     })
+
+    // ***** Cloudinary code
+
+    const UploadWidget = (clickEvent) => {
+        clickEvent.preventDefault()
+        let widget = window.cloudinary.createUploadWidget({
+            cloudName: "dq4w2zwr2",
+            uploadPreset: "fe_capstone"
+        }, 
+            (error, result) => {
+                if (!error && result && result.event === "success") {
+                    console.log(result.info.url)
+                    const copy = { ...applyance }
+                    copy.picture = result.info.url
+                    update(copy)
+                }
+            });
+            widget.open()
+        }
+
+    // ***** End Cloudinary code
 
     // useNavigate hook to navigate to another URL
     const navigate = useNavigate()
@@ -69,7 +91,7 @@ export const ApplyanceForm = () => {
         const dataToSendToAPI = {
             userId: applyUserObject.id, // obtained from the login info
             makeModel: applyance.makeModel,
-            // picture: applyance.picture,
+            picture: applyance.picture,
             manual: applyance.manual,
             modelNumber: applyance.modelNumber,
             serialNumber: applyance.serialNumber,
@@ -119,9 +141,25 @@ export const ApplyanceForm = () => {
 
             {/* fieldset for picture */}
             <fieldset>
-                        <ApplyancePicture 
-                        // passed as a prop so AppPic can watch for the button press
-                            buttonPressed={buttonPressed}/>
+                    <div className="form-group">
+                        <button
+                            onClick={(clickEvent) => UploadWidget(clickEvent)}
+                        >Upload Picture</button>
+                    {/* <label htmlFor="picture">Picture: </label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter picture URL for new appliance"
+                        value={applyance.picture}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...applyance }
+                                copy.picture = evt.target.value
+                                update(copy)
+                            }
+                        } /> */}
+                </div>   
             </fieldset>
             
 
