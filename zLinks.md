@@ -1,8 +1,8 @@
-All-Clad Multi-Cooker
+<!-- All-Clad Multi-Cooker
 https://assets.wsimgs.com/wsimgs/ab/images/dp/wcm/202314/0752/img32o.jpg
 https://www.williams-sonoma.com/netstorage/pdf/113791-All-Clad-7Qt-Slow-Cooker-Gourmet-Plus-Manual.pdf
 Serie SC04-A
-N/A
+N/A -->
 
 Microsoft Xbox Series X
 /images/MicrosoftXboxSeriesX.jpg
