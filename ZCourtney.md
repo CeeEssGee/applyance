@@ -224,6 +224,15 @@ Added validation, and now I'm not having the bug anymore
 <!-- CSS - Make it purty -->
 Clean up some warnings
 added font
+<!-- Status - uploaded to Github -->
+
+
+<!-- Refactor code  -->
+Create form, edit form, and form on separate components to reuse the "form" portion
+<!-- Status - seems to be working -->
+
+
+Make sure the ApplicationViews are updated
 
 
 

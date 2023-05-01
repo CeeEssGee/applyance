@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "./Applyances.css"
+import { ApplyanceForm } from "./ApplyanceForm"
 
 export const ApplyanceEdit = () => {
 
@@ -70,147 +71,17 @@ export const ApplyanceEdit = () => {
     }
 
     // JSX to render what displays when pressing Edit ApplYance on the all-applyances/# URL
-    return <>
+    return (
+    <>
+                    <h2 className="applyanceForm__title">Edit ApplYance</h2>
 
-        <form className="applyanceForm">
-            <h2 className="applyanceForm__title">Edit ApplYance</h2>
-
-            {/* fieldset for makeModel */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="makeModel">Make and Model: </label>
-                    <textarea
-                        required autoFocus
-                        type="text"
-                        style={{
-                            height: "2rem"
-                        }}
-                        className="form-control"
-                        value={applyance.makeModel}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.makeModel = evt.target.value
-                                editApplyance(copy)
-                            }
-                        }>{applyance.makeModel}</textarea>
-                </div>
-            </fieldset>
-
-            {/* fieldset for picture */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="picture">Picture: </label>
-                    <textarea
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        value={applyance.picture}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.picture = evt.target.value
-                                editApplyance(copy)
-                            }
-                        }>{applyance.picture}</textarea>
-                </div>
-            </fieldset>
-
-            {/* fieldset for manual */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="manual">Manual: </label>
-                    <textarea
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        value={applyance.manual}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.manual = evt.target.value
-                                editApplyance(copy)
-                            }
-                        }>{applyance.manual}</textarea>
-                </div>
-            </fieldset>
-
-            {/* fieldset for tagId */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="tagId">Location in the Home: </label>
-                    <select id="tagId"
-                        required autoFocus
-                        className="form-control"
-                        value={applyance.tagId}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.tagId = parseInt(evt.target.value)
-                                editApplyance(copy)
-                            }
-                        }
-                    ><option value="0">Select home location</option>
-                        {
-                            tags.map(
-                                (tag) => {
-                                    return <option key={tag.id}
-                                        className="tagDropdown" value={tag.id}>
-                                        {tag.location}
-                                    </option>
-                                }
-                            )
-                        }
-
-                    </select>
-                </div>
-            </fieldset>
-
-            {/* fieldset for modelNumber */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="modelNumber">Model Number: </label>
-                    <textarea
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        value={applyance.modelNumber}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.modelNumber = evt.target.value
-                                editApplyance(copy)
-                            }
-                        }>{applyance.modelNumber}</textarea>
-                </div>
-            </fieldset>
-
-            {/* fieldset for serialNumber */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="location">Serial Numeber: </label>
-                    <textarea
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        value={applyance.serialNumber}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.serialNumber = evt.target.value
-                                editApplyance(copy)
-                            }
-                        }>{applyance.serialNumber}</textarea>
-                </div>
-            </fieldset>
-
-            <button
-            // References the function above
-                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="button-saveEdit">
-                Save ApplYance
-            </button>
-        </form>
+            <ApplyanceForm 
+                applyance={applyance}
+                update={editApplyance}
+                handleSaveButtonClick={handleSaveButtonClick}
+                tags={tags}
+            />
     </>
+    )
 }
 
