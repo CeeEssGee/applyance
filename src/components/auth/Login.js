@@ -44,7 +44,7 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1><img src="/images/ApplYances.jpg" /></h1>
+                    <h1><img src="/images/ApplYances.jpg" alt="logo"/></h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>

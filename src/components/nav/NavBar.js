@@ -1,11 +1,9 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
-import { ApplyanceSearch } from "../applyances/ApplyanceSearch"
+
 
 export const NavBar = () => {
     const navigate = useNavigate()
-
-
 
     return (
         <ul className="navbar">

@@ -15,7 +15,7 @@ export const ApplicationViews = () => {
                 <>
                 {/* shows on all pages */}
                     <h1 className="title--main">
-                        <Link to={`all-applyances`}><img src="/images/ApplYances.jpg" /></Link>
+                        <Link to={`all-applyances`}><img src="/images/ApplYances.jpg" alt="appliance"/></Link>
                         </h1>
                     <div>Everything you need (and some of what you don't) for any appliance and electronic device you take the time to enter into the database</div>
                     <p></p>

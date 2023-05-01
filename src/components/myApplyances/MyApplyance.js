@@ -59,7 +59,7 @@ export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllAppl
         </div>
         
         <div className="picture">
-            <img src={picture} />
+            <img src={picture} alt="appliance"/>
         </div>
         
         <footer>

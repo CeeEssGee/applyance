@@ -221,6 +221,11 @@ Need validation to prevent buggy deletes
 Added validation, and now I'm not having the bug anymore
 <!-- Status - Bug squashed -->
 
+<!-- CSS - Make it purty -->
+Clean up some warnings
+added font
+
+
 
 
 <!-- QUESTIONS -->

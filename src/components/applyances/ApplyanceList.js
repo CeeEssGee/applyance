@@ -1,17 +1,11 @@
 // Parent to Applyance.js
 // Child of ApplyanceContainer.js
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import "./Applyances.css"
 import { Applyance } from "./Applyance"
 
 // ApplyanceList component receives the searchTermState prop from the parent and uses it to filter the list of applyances that it displays. If empty, it displays all applyances. Otherwise, it displays a filtered list based on the whether the make/model includes the searchTerms string
 export const ApplyanceList = ({ searchTermState }) => {
-
-    // get apply user object out of local storage as a string
-    const localApplyUser = localStorage.getItem("apply_user")
-    // parse the string into an object with 2 keys (id and admin)
-    const applyUserObject = JSON.parse(localApplyUser)
 
     // useState hook to observe the initial state (applyances) and to update the state (setApplyances)
     const [applyances, setApplyances] = useState([])
@@ -48,7 +42,7 @@ export const ApplyanceList = ({ searchTermState }) => {
             })
             setFiltered(searchedApplyances)
         },
-        [searchTermState]
+        [searchTermState, applyances] // missing dependency: 'applyances'. Either include it or remove the dependency array
     )
 
     // Function that fetches the list of applyances from the API and sets the applyances state variable to the fetched array, allows us to use the function at a later time to get refreshed data from the API
