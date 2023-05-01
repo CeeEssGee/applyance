@@ -23,16 +23,7 @@ export const ApplyanceDetails = () => {
     const [notes, setNotes] = useState([])
 
     
-// ***** MODAL *****
-
-    // const inputRef = useRef(null); // Josh - cursor in text area
-    
-    // from website Josh suggested
-        // const MyInput = forwardRef((props, ref) => {
-        //     return <input {...props} ref={ref} />;
-        // });
-
-        // const inputRef = useRef(null)
+    // ***** MODAL *****
 
     // useState hook to observe the initial state (modal) and to update the state (setModal) - the default state is false (do not show the Modal)
     const [modal, setModal] = useState(false);
@@ -101,12 +92,7 @@ export const ApplyanceDetails = () => {
             })
     }
 
-    // function to reload page because picture doesn't show without it seems to be working now
-    // const reload = () => {
-    //     (window.location.reload())
-    // }
-// ***** END MODAL *****
-
+    // ***** END MODAL *****
 
 
     // useEffect hook that fetches the notes for the selected applyance matching the URL from the API sorted by note ID in descending order so it will display the most recent first
@@ -279,8 +265,6 @@ export const ApplyanceDetails = () => {
                 </Modal>
             </div>
             {/* Modal Form */}
-
-
 
             <p></p>
             Notes:

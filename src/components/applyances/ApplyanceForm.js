@@ -65,7 +65,7 @@ export const ApplyanceForm = () => {
         event.preventDefault() // this keeps the entire page from automatically reloading
 
 
-        /* Sample ApplYance to match for data to send to API
+        /* Sample ApplYance to match for dataToSendToAPI
             {
           "id": 1,
           "makeModel": "Silhouette Cameo4",

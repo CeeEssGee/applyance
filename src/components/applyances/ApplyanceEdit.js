@@ -166,7 +166,7 @@ export const ApplyanceEdit = () => {
                 </div>
             </fieldset>
 
-            {/* fieldset for model number */}
+            {/* fieldset for modelNumber */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="modelNumber">Model Number: </label>

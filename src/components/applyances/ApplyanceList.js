@@ -61,7 +61,6 @@ export const ApplyanceList = ({ searchTermState }) => {
     }
 
 
-
     // JSX renders to a child (Applyance) with a key prop on the parent. The remaining props are passed to the Applyance component.
     return <>
         <h2>All ApplYances</h2>
@@ -79,12 +78,7 @@ export const ApplyanceList = ({ searchTermState }) => {
                         location={applyance?.tag?.location}
                     />)
             }
-
-
         </article>
-
     </>
-
-
 }
 

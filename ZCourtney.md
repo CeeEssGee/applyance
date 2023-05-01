@@ -201,9 +201,9 @@ Pushed branch to Github and continued on with Cloudinary
 
 <!-- Cloudinary -->
 Reunited modules and added Cloudinary with Jeremy's help
+Phantom code removed
 <!-- Status - It works!!! -->
 
-Need to clean up zombie code!
 
 
 <!-- QUESTIONS -->
