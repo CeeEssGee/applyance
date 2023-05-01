@@ -1,9 +1,8 @@
 // need to add a modal input form
 import { useParams, Link, useNavigate } from "react-router-dom"
-import { useState, useEffect, forwardRef } from "react"
+import { useState, useEffect } from "react"
 import "./Applyances.css"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
-import { useRef } from "react";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input } from 'reactstrap';
 
 
 
@@ -33,7 +32,6 @@ export const ApplyanceDetails = () => {
     // function, if invoked, the model shows
     const handleOpen = () => {
         setModal(true)
-        // inputRef.current.focus() // Josh - cursor in text area / from website
     }
 
     // functionality for the close button on the modal (X in upper right), which closes the modal by invoking the handleClose button
@@ -104,7 +102,7 @@ export const ApplyanceDetails = () => {
                     setNotes(notesArray) // updated the state
                 })
         },
-        []
+        [applyanceId] // missing dependency: 'applyanceId'. Either include it or remove the dependency array
     )
 
 
@@ -197,7 +195,7 @@ export const ApplyanceDetails = () => {
             </div>
 
             <div>
-                <img src={`${applyance.picture}`}></img>
+                <img src={`${applyance.picture}`} alt="appliance"></img>
             </div>
 
             <div>
@@ -234,7 +232,6 @@ export const ApplyanceDetails = () => {
                                 <p className="modal-label">Please enter your notes</p>
                                 <Input
                                     required autoFocus
-                                    // ref={inputRef} // Josh - cursor in text area and website
                                     type="textarea"
                                     className="form-control"
                                     style={{

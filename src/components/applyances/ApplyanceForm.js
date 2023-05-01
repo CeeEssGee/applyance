@@ -1,6 +1,6 @@
 // parent to ApplyancePicture
 import { useEffect, useState } from "react";
-import { isRouteErrorResponse, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
 
 
@@ -240,7 +240,7 @@ export const ApplyanceForm = () => {
                         {
                             applyance.picture !== ""
                             ? <>
-                            <div><img src={applyance.picture}></img>
+                            <div><img src={applyance.picture} alt="appliance"></img>
                             </div>
                             </>
                             : <>(Image will preview here)</>

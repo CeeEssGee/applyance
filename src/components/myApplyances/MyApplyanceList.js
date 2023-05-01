@@ -1,7 +1,6 @@
 // Parent to MyApplyance.js
 // Child of MyApplyanceContainer.js
 import { useEffect, useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
 import { MyApplyance } from "./MyApplyance"
 import "../applyances/Applyances.css"
 
@@ -12,9 +11,6 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
     const localApplyUser = localStorage.getItem("apply_user")
     // parse the string into an object with 2 keys (id and admin)
     const applyUserObject = JSON.parse(localApplyUser)
-
-    // reassign useNavigate() hook to navigate to be used later    
-    const navigate = useNavigate()
 
     // useState hook to observe the initial state (applyances) and to update the state (setApplyances)
     const [applyances, setApplyances] = useState([])
@@ -58,7 +54,7 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
             const myApplyances = applyances.filter(applyance => applyance.userId === applyUserObject.id)
             setFiltered(myApplyances)
         },
-        [applyances] 
+        [applyances, applyUserObject.id] //  missing dependency: 'applyUserObject.id'. Either include it or remove the dependency array, seems to not break when I add it
     )
 
     // useEffect hook is used to update filteredApplyances when the searchTermState changes. Filters the applyances array based on teh search term u sing the filter method and sets the filtered array to filtererdApplyances using the setFiltered function
@@ -69,7 +65,7 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
             })
             setFiltered(mySearchedApplyances)
         },
-        [mySearchTermState] 
+        [mySearchTermState] //  missing dependency: 'applyances'. Either include it or remove the dependency array, when added all applyances
     )
 
 

@@ -2,7 +2,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "../applyances/Applyances.css"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input } from 'reactstrap';
 
 
 export const MyApplyanceDetails = () => {
@@ -102,7 +102,7 @@ export const MyApplyanceDetails = () => {
                     setNotes(notesArray)
                 })
         },
-        []
+        [myApplyanceId] // missing dependency: 'myApplyanceId'. Either include it or remove the dependency array
     )
 
 
@@ -193,7 +193,7 @@ export const MyApplyanceDetails = () => {
             </div>
 
             <div>
-                <img src={`${applyance.picture}`}></img>
+                <img src={`${applyance.picture}`} alt="appliance"></img>
             </div>
 
             <div>
