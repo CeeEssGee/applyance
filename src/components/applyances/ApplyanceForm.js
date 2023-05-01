@@ -1,11 +1,8 @@
 // parent to ApplyancePicture
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
-// import { Cloudinary } from "@cloudinary/url-gen";
 
-import { UploadWidget } from "./UploadWidget";
-// import { ApplyancePicture } from "./ApplyancePicture";
 
 export const ApplyanceForm = () => {
 
@@ -19,8 +16,8 @@ export const ApplyanceForm = () => {
         tagId: ""
     })
 
-    // ***** Cloudinary code
 
+    // ***** Cloudinary code
     const UploadWidget = (clickEvent) => {
         clickEvent.preventDefault()
         let widget = window.cloudinary.createUploadWidget({
@@ -37,8 +34,8 @@ export const ApplyanceForm = () => {
             });
             widget.open()
         }
-
     // ***** End Cloudinary code
+
 
     // useNavigate hook to navigate to another URL
     const navigate = useNavigate()
@@ -62,19 +59,11 @@ export const ApplyanceForm = () => {
         },
         []
     )
-    
-    const [buttonPressed, setButtonPressed ] = useState(false)
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
-        event.preventDefault() // this keeps the page from automatically reloading
+        event.preventDefault() // this keeps the entire page from automatically reloading
 
-        // to send the signal to ApplyancePicture
-        if (buttonPressed === true) {
-            setButtonPressed(false)
-        } else {
-            setButtonPressed(true)
-        }
 
         /* Sample ApplYance to match for data to send to API
             {
@@ -115,26 +104,6 @@ export const ApplyanceForm = () => {
             })
     }
 
-// ***** BEGIN CLOUDINARY CODE ******
-
-// const myWidget = window.cloudinary.createUploadWidget(
-//     {
-//       cloudName: "dq4w2zwr2",
-//       uploadPreset: "fe_capstone"
-//     },
-//     (error, result) => {
-//       if (!error && result && result.event === "success") {
-//         console.log("Done! Here is the image info: ", result.info);
-//       }
-//     }
-//   );
-
-//   const handleUploadPictureButton = (event) => {
-//     myWidget.open()
-//   }
-
-  // ***** END CLOUDINARY CODE ******
-
     // JSX to render what displays when clicking the Add New Applyance link in the NavBar (http://localhost:3000/new-applyance)
     return (
         <form className="applyanceForm">
@@ -165,51 +134,10 @@ export const ApplyanceForm = () => {
                     <div className="form-group">
                         <button
                             onClick={(clickEvent) => UploadWidget(clickEvent)}
-                        >Upload Picture</button>
-                    {/* <label htmlFor="picture">Picture: </label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter picture URL for new appliance"
-                        value={applyance.picture}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.picture = evt.target.value
-                                update(copy)
-                            }
-                        } /> */}
+                        >Upload Picture</button>                    
                 </div>   
             </fieldset>
             
-
-            {/* ***** CLOUDINARY fieldset for picture */}
-            {/* <fieldset>
-                <div className="form-group">
-                    <button onClick={(clickEvent) => handleUploadPictureButton(clickEvent)}
-
-                    
-                        id="upload_widget"
-                        className="cloudinary-button">
-                            Upload Picture
-                        </button>
-                    <label htmlFor="picture">Picture: </label>
-                    <input
-                        required autoFocus                        
-                        className="form-control"
-                        value={applyance.picture}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.picture = evt.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset> */}
-
-
             {/* fieldset for manual */}
             <fieldset>
                 <div className="form-group">
@@ -302,7 +230,7 @@ export const ApplyanceForm = () => {
             </fieldset>
 
             <button
-                // References the function above
+                // References the handleSaveButtonClick function above
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
                 Save ApplYance

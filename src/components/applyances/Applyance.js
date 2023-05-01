@@ -5,9 +5,10 @@ import "./Applyances.css"
 // Receives several props from ApplianceList.js
 export const Applyance = ({ id, makeModel, picture, manual, userId, getAllApplyances, applyanceObject, location }) => {
 
-    // get apply user object out of local storage
-    const localApplyUser = localStorage.getItem("apply_user") // a string
-    const applyUserObject = JSON.parse(localApplyUser) // an object with 2 keys (id and staff)
+    // get apply user object out of local storage as a string
+    const localApplyUser = localStorage.getItem("apply_user") 
+    // parse the string into an object with 2 keys (id and admin)
+    const applyUserObject = JSON.parse(localApplyUser) 
 
     // If the current user is the "owner" of the appliance, they can see the edit button and are given permission to edit the appliance
     const editButton = () => {
@@ -24,18 +25,17 @@ export const Applyance = ({ id, makeModel, picture, manual, userId, getAllApplya
 
     // If the current user is the "owner" of the appliance, they can see the delete button are given permission to delete the appliance. 
     const deleteButton = () => {
-        if (applyUserObject.id === userId || applyUserObject.admin === true) {
+        if ((applyUserObject.id === userId || applyUserObject.admin === true) && applyanceObject.id === id) {
             return <>
                 <footer><button
                     onClick={() => {
-                        fetch(`http://localhost:8088/applyances/${applyanceObject.id}`, {
+                        fetch(`http://localhost:8088/applyances/${id}`, {
                             method: "DELETE"
                         })
                             .then(() => {
                                 getAllApplyances()
                             })
                     }}
-
                 >
                     Delete ApplYance
                 </button></footer>

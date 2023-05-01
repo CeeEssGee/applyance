@@ -203,7 +203,7 @@ Pushed branch to Github and continued on with Cloudinary
 Reunited modules and added Cloudinary with Jeremy's help
 <!-- Status - It works!!! -->
 
-
+Need to clean up zombie code!
 
 
 <!-- QUESTIONS -->

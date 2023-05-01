@@ -178,7 +178,7 @@ export const ApplyanceDetails = () => {
             return <>
                 <footer><button
                     onClick={() => {
-                        fetch(`http://localhost:8088/applyances/${applyanceId}`, {
+                        fetch(`http://localhost:8088/applyances/${applyance.id}`, {
                             method: "DELETE"
                         })
                             .then(() => {
