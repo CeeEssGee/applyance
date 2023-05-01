@@ -204,6 +204,23 @@ Reunited modules and added Cloudinary with Jeremy's help
 Phantom code removed
 <!-- Status - It works!!! -->
 
+<!-- Buggy delete button -->
+Testing - logged in as sean@g.com
+Added Test and test (no additional data)
+    All Applyances page
+        Delete Test and test is also deleted
+    My Applyances page
+        Delete Test and test is also deleted
+    Test details page
+        Delete Test and test is also deleted
+    test details page
+        Delete test and test is also deleted
+Added Test and test (with additional data)
+    It doesn't bug out if additional data is added
+Need validation to prevent buggy deletes
+Added validation, and now I'm not having the bug anymore
+<!-- Status - Bug squashed -->
+
 
 
 <!-- QUESTIONS -->

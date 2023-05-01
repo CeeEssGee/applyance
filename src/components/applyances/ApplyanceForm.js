@@ -1,6 +1,6 @@
 // parent to ApplyancePicture
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { isRouteErrorResponse, useNavigate } from "react-router-dom"
 import "./Applyances.css"
 
 
@@ -62,6 +62,9 @@ export const ApplyanceForm = () => {
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
+        if (applyance.makeModel === "" || applyance.picture === "" || applyance.manual === "" || applyance.modelNumber === "" || applyance.serialNumber === "") {
+            return window.alert("Please ensure that you have filled out all fields and uploaded a photo of the Applyance")
+        }
         event.preventDefault() // this keeps the entire page from automatically reloading
 
 
@@ -106,7 +109,11 @@ export const ApplyanceForm = () => {
 
     // JSX to render what displays when clicking the Add New Applyance link in the NavBar (http://localhost:3000/new-applyance)
     return (
-        <form className="applyanceForm">
+        <form 
+        className="applyanceForm"
+        // validation to fill out all form fields
+        noValidate
+        >
             <h2 className="applyanceForm__title">New ApplYance</h2>
 
             {/* fieldset for makeModel */}
@@ -114,10 +121,11 @@ export const ApplyanceForm = () => {
                 <div className="form-group">
                     <label htmlFor="makeModel">Make and Model: </label>
                     <input
-                        required autoFocus
+                        autoFocus
+                        required 
                         type="text"
                         className="form-control"
-                        placeholder="Enter make and model of new appliance"
+                        placeholder="(GE Dishwasher)"
                         value={applyance.makeModel}
                         onChange={
                             (evt) => {
@@ -128,25 +136,16 @@ export const ApplyanceForm = () => {
                         } />
                 </div>
             </fieldset>
-
-            {/* fieldset for picture */}
-            <fieldset>
-                    <div className="form-group">
-                        <button
-                            onClick={(clickEvent) => UploadWidget(clickEvent)}
-                        >Upload Picture</button>                    
-                </div>   
-            </fieldset>
             
             {/* fieldset for manual */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="manual">Manual: </label>
                     <input
-                        required autoFocus
+                        required 
                         type="text"
                         className="form-control"
-                        placeholder="Enter manual URL for new appliance"
+                        placeholder="Enter URL to Manual"
                         value={applyance.manual}
                         onChange={
                             (evt) => {
@@ -163,7 +162,7 @@ export const ApplyanceForm = () => {
                 <div className="form-group">
                     <label htmlFor="tagId">Location in the Home: </label>
                     <select id="tagId"
-                        required autoFocus
+                        required 
                         className="form-control"
                         value={applyance.tagId}
                         onChange={
@@ -173,7 +172,7 @@ export const ApplyanceForm = () => {
                                 update(copy)
                             }
                         }
-                    ><option value="0">Select home location</option>
+                    ><option value="0">Select in dropdown</option>
                         {
                             tags.map(
                                 (tag) => {
@@ -194,10 +193,10 @@ export const ApplyanceForm = () => {
                 <div className="form-group">
                     <label htmlFor="modelNumber">Model Number: </label>
                     <input
-                        required autoFocus
+                        required 
                         type="text"
                         className="form-control"
-                        placeholder="Enter model number"
+                        placeholder="(N/A if not applicable)"
                         value={applyance.modelNumber}
                         onChange={
                             (evt) => {
@@ -214,10 +213,10 @@ export const ApplyanceForm = () => {
                 <div className="form-group">
                     <label htmlFor="serialNumber">Serial Number: </label>
                     <input
-                        required autoFocus
+                        required 
                         type="text"
                         className="form-control"
-                        placeholder="Enter serial number"
+                        placeholder="(N/A if not applicable)"
                         value={applyance.serialNumber}
                         onChange={
                             (evt) => {
@@ -229,7 +228,28 @@ export const ApplyanceForm = () => {
                 </div>
             </fieldset>
 
+            {/* fieldset for picture */}
+            <fieldset>
+                    <div className="form-group">
+                        <button
+                            required
+                            onClick={(clickEvent) => UploadWidget(clickEvent)}
+                        >Upload Picture</button>                    
+                </div>   
+                <div className="imagePreview">
+                        {
+                            applyance.picture !== ""
+                            ? <>
+                            <div><img src={applyance.picture}></img>
+                            </div>
+                            </>
+                            : <>(Image will preview here)</>
+                        }
+                </div>
+            </fieldset>
+
             <button
+            type="submit"
                 // References the handleSaveButtonClick function above
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
