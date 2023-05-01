@@ -71,7 +71,7 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
 
     // JSX renders to a child (Applyance) with a key prop on the parent. The remaining props are passed to the MyApplyance component.
     return <>
-        <h2>All ApplYances</h2>
+        <h2>My ApplYances</h2>
         <article className="applyanceArticle">
             {
                 filteredApplyances.map(

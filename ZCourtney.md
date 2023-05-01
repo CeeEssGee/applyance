@@ -229,10 +229,11 @@ added font
 
 <!-- Refactor code  -->
 Create form, edit form, and form on separate components to reuse the "form" portion
-<!-- Status - seems to be working -->
-
-
 Make sure the ApplicationViews are updated
+<!-- Status - seems to be working -->
+Test all methods
+Verify all edit's are updated
+
 
 
 
