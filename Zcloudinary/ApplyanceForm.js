@@ -1,24 +1,31 @@
-import { useNavigate, useParams, Link } from "react-router-dom"
-import { useState, useEffect } from "react"
+// with Cloudinary
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
+import { Cloudinary } from "@cloudinary/url-gen";
 
-export const ApplyanceEdit = () => {
 
-    // useParams hook to obtain the applyanceId based on the selected applyance URL
-    const { applyanceId } = useParams()
+
+export const ApplyanceForm = () => {
+
+    // useState hook to observe the initial state (applyance) and to update the state (update), includes the default properties of the initial state object
+    const [applyance, update] = useState({
+        makeModel: "",
+        picture: "",
+        manual: "",
+        modelNumber: "",
+        serialNumber: "",
+        tagId: ""
+    })
 
     // useNavigate hook to navigate to another URL
     const navigate = useNavigate()
 
-    // useState hook to observe the initial state (applyance) and to edit the state (editApplyance), includes the default properties of the initial state object
-    const [applyance, editApplyance] = useState({
-        makeModel: "", // default is empty string
-        picture: "", // default is empty string
-        manual: "", // default is empty string
-        modelNumber: "", // default is empty string
-        serialNumber: "", // default is empty string
-        tagId: "" // default is empty string
-    })
+    // get apply user object out of local storage as a string
+    const localApplyUser = localStorage.getItem("apply_user")
+    // parse the string into an object with 2 keys (id and admin)
+    const applyUserObject = JSON.parse(localApplyUser)
 
     // useState hook to observe the initial state (tags) and to update the state (setTags)
     const [tags, setTags] = useState([])
@@ -28,91 +35,145 @@ export const ApplyanceEdit = () => {
         () => {
             fetch(`http://localhost:8088/tags?_sort=location`)
                 .then(response => response.json())
-                .then((tagArray) => { // assigned as tagArray
-                    setTags(tagArray) // updated the state
+                .then((tagArray) => {
+                    setTags(tagArray)
                 })
         },
         []
     )
-
-    // useEffect hook that fetches the selected applyance
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/applyances/${applyanceId}`)
-                .then(response => response.json())
-                .then((data) => { // assigned as the selected applyance
-                    const applyanceArray = data 
-                    editApplyance(applyanceArray) // updated the state
-
-                })
-        },
-        [applyanceId] // we're watching for the applyanceId
-    )
+    
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
         event.preventDefault() // this keeps the page from automatically reloading
 
-        // updates database with our edits
-        return fetch(`http://localhost:8088/applyances/${applyance.id}`, {
-            method: "PUT",
+        /* Sample ApplYance to match for data to send to API
+            {
+          "id": 1,
+          "makeModel": "Silhouette Cameo4",
+          "picture": "images/Cameo4.jpg",
+          "manual": "https://drive.google.com/file/d/1x_i-qIs-R_1qpDt6Hu5Y4psMsyWINwve/view?usp=share_link",
+          "modelNumber": "N/A"
+          "serialNumber": "N/A",
+          "userId": 1,
+           "tagId": 5
+            }
+        */
+
+        // JavaScript object with the required properties to send to the API
+        const dataToSendToAPI = {
+            userId: applyUserObject.id, // obtained from the login info
+            makeModel: applyance.makeModel,
+            picture: applyance.picture,
+            manual: applyance.manual,
+            modelNumber: applyance.modelNumber,
+            serialNumber: applyance.serialNumber,
+            tagId: applyance.tagId
+        }
+
+        // fetch POST call to post a new object to the database
+        return fetch(`http://localhost:8088/applyances`, {
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(applyance)
+            body: JSON.stringify(dataToSendToAPI)
         })
             .then(response => response.json())
             .then(() => {
-                // navigates the website to the selected applyance after saving the changes
-                navigate(`/all-applyances/${applyance.id}`)
+                // display the my-applyances URL
+                navigate(`/my-applyances`)
             })
-
     }
 
-    // JSX to render what displays when pressing Edit ApplYance on the all-applyances/# URL
-    return <>
+// ***** BEGIN CLOUDINARY CODE ******
 
+const myWidget = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "dq4w2zwr2",
+      uploadPreset: "fe_capstone"
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+      }
+    }
+  );
+
+  const handleUploadPictureButton = (event) => {
+    myWidget.open()
+  }
+
+  // ***** END CLOUDINARY CODE ******
+
+    // JSX to render what displays when clicking the Add New Applyance link in the NavBar (http://localhost:3000/new-applyance)
+    return (
         <form className="applyanceForm">
-            <h2 className="applyanceForm__title">Edit ApplYance</h2>
+            <h2 className="applyanceForm__title">New ApplYance</h2>
 
             {/* fieldset for makeModel */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="makeModel">Make and Model: </label>
-                    <textarea
+                    <input
                         required autoFocus
                         type="text"
-                        style={{
-                            height: "2rem"
-                        }}
                         className="form-control"
+                        placeholder="Enter make and model of new appliance"
                         value={applyance.makeModel}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
                                 copy.makeModel = evt.target.value
-                                editApplyance(copy)
+                                update(copy)
                             }
-                        }>{applyance.makeModel}</textarea>
+                        } />
                 </div>
             </fieldset>
 
-            {/* fieldset for picture */}
+            {/* fieldset for picture
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="picture">Picture: </label>
-                    <textarea
+                    <input
                         required autoFocus
                         type="text"
+                        className="form-control"
+                        placeholder="Enter picture URL for new appliance"
+                        value={applyance.picture}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...applyance }
+                                copy.picture = evt.target.value
+                                update(copy)
+                            }
+                        } />
+                </div>
+            </fieldset> */}
+
+
+            {/* ***** CLOUDINARY fieldset for picture */}
+            <fieldset>
+                <div className="form-group">
+                    <button onClick={(clickEvent) => handleUploadPictureButton(clickEvent)}
+
+                    
+                        id="upload_widget"
+                        className="cloudinary-button">
+                            Upload Picture
+                        </button>
+                    <label htmlFor="picture">Picture: </label>
+                    <input
+                        required autoFocus                        
                         className="form-control"
                         value={applyance.picture}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
                                 copy.picture = evt.target.value
-                                editApplyance(copy)
+                                update(copy)
                             }
-                        }>{applyance.picture}</textarea>
+                        } />
                 </div>
             </fieldset>
 
@@ -120,18 +181,19 @@ export const ApplyanceEdit = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="manual">Manual: </label>
-                    <textarea
+                    <input
                         required autoFocus
                         type="text"
                         className="form-control"
+                        placeholder="Enter manual URL for new appliance"
                         value={applyance.manual}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
                                 copy.manual = evt.target.value
-                                editApplyance(copy)
+                                update(copy)
                             }
-                        }>{applyance.manual}</textarea>
+                        } />
                 </div>
             </fieldset>
 
@@ -147,7 +209,7 @@ export const ApplyanceEdit = () => {
                             (evt) => {
                                 const copy = { ...applyance }
                                 copy.tagId = parseInt(evt.target.value)
-                                editApplyance(copy)
+                                update(copy)
                             }
                         }
                     ><option value="0">Select home location</option>
@@ -170,47 +232,48 @@ export const ApplyanceEdit = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="modelNumber">Model Number: </label>
-                    <textarea
+                    <input
                         required autoFocus
                         type="text"
                         className="form-control"
+                        placeholder="Enter model number"
                         value={applyance.modelNumber}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
                                 copy.modelNumber = evt.target.value
-                                editApplyance(copy)
+                                update(copy)
                             }
-                        }>{applyance.modelNumber}</textarea>
+                        } />
                 </div>
             </fieldset>
 
-            {/* fieldset for serialNumber */}
+            {/* fieldset for serial number */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="location">Serial Numeber: </label>
-                    <textarea
+                    <label htmlFor="serialNumber">Serial Number: </label>
+                    <input
                         required autoFocus
                         type="text"
                         className="form-control"
+                        placeholder="Enter serial number"
                         value={applyance.serialNumber}
                         onChange={
                             (evt) => {
                                 const copy = { ...applyance }
                                 copy.serialNumber = evt.target.value
-                                editApplyance(copy)
+                                update(copy)
                             }
-                        }>{applyance.serialNumber}</textarea>
+                        } />
                 </div>
             </fieldset>
 
             <button
-            // References the function above
+                // References the function above
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="button-saveEdit">
+                className="btn btn-primary">
                 Save ApplYance
             </button>
         </form>
-    </>
+    )
 }
-

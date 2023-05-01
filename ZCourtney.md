@@ -199,8 +199,10 @@ Separate module created, picture now posts in an separate object
 Pushed branch to Github and continued on with Cloudinary
 <!-- Check with Josh to see if that's what we meant to do... I think so because we are going to be creating a different object on Cloudinary -->
 
-
-
+<!-- Cloudinary -->
+Reunited modules and added Cloudinary with Jeremy's help
+Phantom code removed
+<!-- Status - It works!!! -->
 
 
 

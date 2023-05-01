@@ -1,9 +1,8 @@
 // parent to ApplyancePicture
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import "./Applyances.css"
-import { UploadWidget } from "./UploadWidget";
-// import { ApplyancePicture } from "./ApplyancePicture";
+
 
 export const ApplyanceForm = () => {
 
@@ -17,8 +16,8 @@ export const ApplyanceForm = () => {
         tagId: ""
     })
 
-    // ***** Cloudinary code
 
+    // ***** Cloudinary code
     const UploadWidget = (clickEvent) => {
         clickEvent.preventDefault()
         let widget = window.cloudinary.createUploadWidget({
@@ -35,8 +34,8 @@ export const ApplyanceForm = () => {
             });
             widget.open()
         }
-
     // ***** End Cloudinary code
+
 
     // useNavigate hook to navigate to another URL
     const navigate = useNavigate()
@@ -60,28 +59,20 @@ export const ApplyanceForm = () => {
         },
         []
     )
-    
-    const [buttonPressed, setButtonPressed ] = useState(false)
 
     // when the button is clicked, it has a parameter, and at that time, the instructions in this fx will run
     const handleSaveButtonClick = (event) => {
-        event.preventDefault() // this keeps the page from automatically reloading
+        event.preventDefault() // this keeps the entire page from automatically reloading
 
-        // to send the signal to ApplyancePicture
-        if (buttonPressed === true) {
-            setButtonPressed(false)
-        } else {
-            setButtonPressed(true)
-        }
 
-        /* Sample ApplYance to match for data to send to API
+        /* Sample ApplYance to match for dataToSendToAPI
             {
           "id": 1,
           "makeModel": "Silhouette Cameo4",
           "picture": "images/Cameo4.jpg",
           "manual": "https://drive.google.com/file/d/1x_i-qIs-R_1qpDt6Hu5Y4psMsyWINwve/view?usp=share_link",
-          "modelNumber": "akb52"
-          "serialNumber": "258s23056",
+          "modelNumber": "N/A"
+          "serialNumber": "R201F431338",
           "userId": 1,
            "tagId": 5
             }
@@ -113,7 +104,6 @@ export const ApplyanceForm = () => {
             })
     }
 
-
     // JSX to render what displays when clicking the Add New Applyance link in the NavBar (http://localhost:3000/new-applyance)
     return (
         <form className="applyanceForm">
@@ -144,25 +134,10 @@ export const ApplyanceForm = () => {
                     <div className="form-group">
                         <button
                             onClick={(clickEvent) => UploadWidget(clickEvent)}
-                        >Upload Picture</button>
-                    {/* <label htmlFor="picture">Picture: </label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter picture URL for new appliance"
-                        value={applyance.picture}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...applyance }
-                                copy.picture = evt.target.value
-                                update(copy)
-                            }
-                        } /> */}
+                        >Upload Picture</button>                    
                 </div>   
             </fieldset>
             
-
             {/* fieldset for manual */}
             <fieldset>
                 <div className="form-group">
@@ -255,7 +230,7 @@ export const ApplyanceForm = () => {
             </fieldset>
 
             <button
-                // References the function above
+                // References the handleSaveButtonClick function above
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
                 Save ApplYance
