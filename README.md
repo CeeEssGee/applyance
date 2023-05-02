@@ -29,7 +29,7 @@ Fill in the required information on the form.
     Admins can edit and delete all appliances
 
 Demo User Credentials<br>
-    User:   user@demo.com
+    User:   user@demo.com<br>
     Admin:  admin@demo.com
 
 Once logged in, you will be directed to the Home page. From there, you can click on any of the navigation links. 
