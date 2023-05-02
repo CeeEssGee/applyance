@@ -48,7 +48,7 @@ The linked Make and Model (Name) of each appliance will take you to a detailed v
 
 ### To test the functionality:
 
-### As an Admin:
+#### As an Admin:
 1.  Click on All ApplYances:
         Verify you can Edit and Delete every appliance in the list
         Verify you can view the Manual by clicking the link
@@ -73,7 +73,7 @@ The linked Make and Model (Name) of each appliance will take you to a detailed v
 6.  Click on the Logout link
         Verify that the Login page shows
 
-### As a User:
+#### As a User:
 1.  Click on All ApplYances:
         Verify you can Edit and Delete only appliances the logged-in user has added
         Verify you can view the Manual by clicking the link
@@ -131,6 +131,6 @@ ERD:
 
 ![ApplYancesERD](https://user-images.githubusercontent.com/116823138/235769916-94dd049b-f9ff-49bf-b0c1-9b6958477aba.jpg)
 
-#### Created by Courtney Gulledge
+#### Created by: Courtney Gulledge
 
 <a href="https://github.com/CeeEssGee" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Courtney Gulledge GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/courtney-gulledge/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Courtney Gulledge LinkedIn" style="height: auto !important;width: auto !important;" /></a>
