@@ -123,14 +123,14 @@ I followed along with the Honey Rae's and Kandy Korner's curriculum for the most
 • Refactoring and CSS
 
 ### Planning
-Wireframe: 
+#### Wireframe: 
 
 ![ApplYancesWireframe](https://user-images.githubusercontent.com/116823138/235769947-e6b10e1b-2e05-40d2-b1b3-b917a028d58e.jpg)
 
-ERD: 
+#### ERD: 
 
 ![ApplYancesERD](https://user-images.githubusercontent.com/116823138/235769916-94dd049b-f9ff-49bf-b0c1-9b6958477aba.jpg)
 
-#### Created by: Courtney Gulledge
+### Created by: Courtney Gulledge
 
 <a href="https://github.com/CeeEssGee" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Courtney Gulledge GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/courtney-gulledge/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Courtney Gulledge LinkedIn" style="height: auto !important;width: auto !important;" /></a>
