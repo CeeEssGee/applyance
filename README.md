@@ -129,7 +129,7 @@ Wireframe:
 
 ERD: 
 
-ApplYancesERD.jpg
+![image](https://user-images.githubusercontent.com/116823138/235769784-a1641acc-544a-4146-be47-636a8e12c319.png)
 
 #### Created by Courtney Gulledge
 
