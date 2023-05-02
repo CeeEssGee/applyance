@@ -1,33 +1,46 @@
 // child of Applyance and MyApplyance (JSX code for both)
 import { Link } from "react-router-dom"
+import { Card, CardBody, CardFooter, CardHeader } from "reactstrap"
 
 export const ApplyanceJSX = ({ id, makeModel, location, manual, picture, editButton, deleteButton }) => {
 
     return (
         <>
-        
-        <section className="applyanceSection">
-            <div>
-                <header>
-                    <Link to={`/all-applyances/${id}`}>{makeModel}</Link>
-                </header>
-                <div className="tag">{location}</div>
-                <div className="manualLink">
-                    <Link to={manual}>Link to Manual</Link>
-                </div>
-            </div>
+            <Card
+                className="my-2"
+                color="white"
+                outline
+                style={{
+                    width: '25rem',
+                    height: '40rem'
+                }}
+            >
+                <section className="applyanceSection">
+                        <CardHeader>
+                            <header>
+                                <Link to={`/all-applyances/${id}`}>{makeModel}</Link>
+                            </header>
+                        </CardHeader>
+                        <img className="picture" src={picture} alt="appliance" />
+                        <CardBody>
+                    <div>
+                        <div className="tag">{location}</div>
+                        <div className="manualLink">
+                            <Link to={manual}>Link to Manual</Link>
+                        </div>
+                    </div>
 
-            <div className="picture">
-                <img className="img" src={picture} alt="appliance"/>
-            </div>
+                    <div className="picture">
+                    </div>
 
-            <footer>
-                {editButton()}
-                {deleteButton()}
-            </footer>
+                    </CardBody>
 
-        </section>
-    
+                    <footer>
+                        {editButton()}
+                        {deleteButton()}
+                    </footer>
+                </section>
+            </Card>
         </>
     )
 }

@@ -234,10 +234,22 @@ Test all methods
 Verify all edit's are updated
 <!-- Status - It alls seems to be working -->
 
-<!-- CSS using Reactstrap Bootstrap -->
+<!-- CSS -->
 Added background color
 Tweaked button and tag colors
+https://coolors.co/a80874-b7fdfe-5ef38c-2b9720-343a1a
 <!-- Commit and merge before adjusting ReactStrap -->
+
+<!-- CSS tweaks using Reactstrap -->
+Added Cards to the JSX for the ApplyanceJSX and DetailsJSX
+Notes is to the right
+<!-- Commit and merge -->
+
+
+
+<!-- WANT-TO-DO'S -->
+LISTS: Move tag, manual link, and edit/delete to bottom of Card with picture centered between header and bottom
+DETAILS: Move details to bottom of card with picture centered between 
 
 
 
