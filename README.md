@@ -43,7 +43,7 @@ You can copy and paste sample data to get an idea of how this app can be used
 <details><summary>Click for Empty Data</summary>
 <p>
 
-```
+```sh
 
 {
   "users": [
