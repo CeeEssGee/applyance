@@ -145,7 +145,7 @@ export const ApplyanceDetails = () => {
         // logic that determines if the user is permitted to edit the applyance, and if so, the edit button will be visible
         if (applyUserObject.id === applyance.userId || applyUserObject.admin === true) {
             return <>
-                <footer><Link to={`/all-applyances-edit/${applyanceId}`}><button>
+                <footer><Link to={`/all-applyances-edit/${applyanceId}`}><button className="button-edit">
                     Edit ApplYance
                 </button></Link></footer>
             </>
@@ -160,7 +160,7 @@ export const ApplyanceDetails = () => {
         // logic that determines if the user is permitted to delete the applyance, and if so, the delete button will be visible
         if (applyUserObject.id === applyance.userId || applyUserObject.admin === true) {
             return <>
-                <footer><button
+                <footer><button className="button-delete"
                     onClick={() => {
                         fetch(`http://localhost:8088/applyances/${applyance.id}`, {
                             method: "DELETE"

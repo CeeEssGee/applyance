@@ -226,7 +226,6 @@ Clean up some warnings
 added font
 <!-- Status - uploaded to Github -->
 
-
 <!-- Refactor code  -->
 Create form, edit form, and form on separate components to reuse the "form" portion
 Make sure the ApplicationViews are updated
@@ -234,6 +233,11 @@ Make sure the ApplicationViews are updated
 Test all methods
 Verify all edit's are updated
 <!-- Status - It alls seems to be working -->
+
+<!-- CSS using Reactstrap Bootstrap -->
+Added background color
+Tweaked button and tag colors
+<!-- Commit and merge before adjusting ReactStrap -->
 
 
 

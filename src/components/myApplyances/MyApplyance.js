@@ -15,7 +15,7 @@ export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllAppl
     const editButton = () => {
         if (applyUserObject.id === userId || applyUserObject.admin === true) {
             return <>
-            <footer><Link to={`/all-applyances-edit/${applyanceObject.id}`}><button>
+            <footer><Link to={`/all-applyances-edit/${applyanceObject.id}`}><button className ="button-edit">
     Edit ApplYance
     </button></Link></footer> 
             </>
@@ -28,7 +28,7 @@ export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllAppl
     const deleteButton = () => {
         if (applyUserObject.id === userId || applyUserObject.admin === true) {
             return <>
-            <footer><button
+            <footer><button className="button-delete"
             			onClick={() => {
                             fetch(`http://localhost:8088/applyances/${applyanceObject.id}`, {
                                 method: "DELETE"
