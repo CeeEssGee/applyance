@@ -34,21 +34,21 @@ Demo User Credentials
 
 Once logged in, you will be directed to the Home page. From there, you can click on any of the navigation links. 
 
-    All ApplYances - shows a list of all appliances
-        includes a Search Bar - allows the user to enter search terms and displays all appliances that includes the search terms in the Make and Model (Name)
-    My ApplYances - shows a list of appliances this logged in user has added
-        includes a Search Bar - allows the user to enter search terms and displays all appliances that includes the search terms in the Make and Model (Name)
-    Add New ApplYance - displays a form to add a new appliance
-    Logout - logs out of the site
+All ApplYances - shows a list of all appliances
+    includes a Search Bar - allows the user to enter search terms and displays all appliances that includes the search terms in the Make and Model (Name)
+My ApplYances - shows a list of appliances this logged in user has added
+    includes a Search Bar - allows the user to enter search terms and displays all appliances that includes the search terms in the Make and Model (Name)
+Add New ApplYance - displays a form to add a new appliance
+Logout - logs out of the site
 
-    The linked Make and Model (Name) of each appliance will take you to a detailed view of that appliance, which shows the Owner, Model Number, Serial Number, and Notes (plus Add a Note button)
+The linked Make and Model (Name) of each appliance will take you to a detailed view of that appliance, which shows the Owner, Model Number, Serial Number, and Notes (plus Add a Note button)
 
 ### Demo of the Application
 <!-- Insert demo here -->
 
-## To test the functionality:
+### To test the functionality:
 
-# As an Admin:
+### As an Admin:
 1.  Click on All ApplYances:
         Verify you can Edit and Delete every appliance in the list
         Verify you can view the Manual by clicking the link
@@ -73,7 +73,7 @@ Once logged in, you will be directed to the Home page. From there, you can click
 6.  Click on the Logout link
         Verify that the Login page shows
 
-# As a User:
+### As a User:
 1.  Click on All ApplYances:
         Verify you can Edit and Delete only appliances the logged-in user has added
         Verify you can view the Manual by clicking the link
@@ -125,11 +125,11 @@ I followed along with the Honey Rae's and Kandy Korner's curriculum for the most
 ### Planning Links
 Wireframe: 
 
-<img src="/assets/ApplYancesWireframe.jpg" alt=""
+<img src="./assets/ApplYancesWireframe.jpg" alt=""
 
 ERD: 
 
-<img src="/assets/ApplYancesERD.jpg" alt="">
+<img src="./assets/ApplYancesERD.jpg" alt="">
 
 #### Created by Courtney Gulledge
 
