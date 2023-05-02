@@ -129,7 +129,7 @@ Wireframe:
 
 ERD: 
 
-<img src="https://dbdiagram.io/d/643d582a6b31947051bb077f" alt=""></img>
+ApplYancesERD.jpg
 
 #### Created by Courtney Gulledge
 
