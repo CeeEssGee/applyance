@@ -282,3 +282,30 @@ Modal works
     How do I get my cursor to automatically be positioned inthe text box without having to click in it? 
     Josh - cursor in test area: import useRef from react const inputRef = useRef(null); ref={inputRef} Did not work - gave me the below link (complicated but doable):
         https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes 
+
+
+
+<!-- README.md  -->
+You'll need to install React, React-Router-Dom, and ReactStrap. Directions for each are located at the bottom of this page. Once installed, proceed with the next step. 
+
+1. Clone this project 
+
+```sh
+git clone git@github.com:CeeEssGee/applyance.git
+cd applyance
+```
+
+2. Access the data.
+
+<!-- Add link to database once it's pushed to Github -->
+
+3.  Launch the client
+
+```sh
+npm install
+npm start
+```
+
+    In the terminal, from the cloned API directory, run json server on port 8088 using the command: json-server database.json -p 8088 -w
+
+    In the terminal, from the capstone directory, run the command: npm start
