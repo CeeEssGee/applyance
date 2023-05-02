@@ -1,8 +1,8 @@
-// need to add a modal input form
+// parent of DetailsJSX
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "./Applyances.css"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input } from 'reactstrap';
+import { DetailsJSX } from "./DetailsJSX"
 
 
 
@@ -21,7 +21,7 @@ export const ApplyanceDetails = () => {
     // useState hook to observe the initial state (notes) and to update the state (setNotes)
     const [notes, setNotes] = useState([])
 
-    
+
     // ***** MODAL *****
 
     // useState hook to observe the initial state (modal) and to update the state (setModal) - the default state is false (do not show the Modal)
@@ -74,7 +74,7 @@ export const ApplyanceDetails = () => {
                 getUpdatedNotes()
                 // navigates to the same page
                 navigate(`/all-applyances/${applyanceId}`)
-                
+
                 // reloads the page so we can see the updated notes (the picture wasn't showing without it) - seems to be working now
                 // reload() 
 
@@ -167,7 +167,6 @@ export const ApplyanceDetails = () => {
                         })
                             .then(() => {
                                 getAllApplyances()
-                                navigate(`/all-applyances`)
                             })
                     }}
 
@@ -183,105 +182,25 @@ export const ApplyanceDetails = () => {
 
 
     // JSX to render what displays on the all-applyances/# website (http://localhost:3000/all-applyances/#)
-    return (<article className="detailsArticle">
-        <section className="applyanceSection">
+    return (
+        <>
+            <DetailsJSX
+                applyance={applyance}
+                editButton={editButton}
+                deleteButton={deleteButton}
+                handleOpen={handleOpen}
+                setModal={setModal}
+                addNote={addNote}
+                handleAddNoteClick={handleAddNoteClick}
+                modal={modal}
+                closeBtn={closeBtn}
+                note={note}
+                handleClose={handleClose}
+                applyanceId={applyanceId}
+                notes={notes}
+            />
+        </>
 
-            <div>
-                <header className="applyance__header">{applyance.makeModel}</header>
-                <div className="tag">{applyance?.tag?.location}</div>
-                <div className="manualLink">
-                    <Link to={applyance.manual}>Link to Manual</Link>
-                </div>
-            </div>
-
-            <div>
-                <img src={`${applyance.picture}`} alt="appliance"></img>
-            </div>
-
-            <div>
-                <div>Owner:  {applyance?.user?.firstName}</div>
-                <div>Model Number:  {applyance.modelNumber}</div>
-                <div>Serial Number:  {applyance.serialNumber}</div>
-            </div>
-
-            <footer>
-                {editButton()}
-                {deleteButton()}
-            </footer>
-        </section>
-        <section className="applyanceNotes">
-            {/* Modal Form */}
-            <div>
-                {/* When a user clicks the Add New Note, toggles the Modal to true/false (default is false) */}
-                <Button onClick={handleOpen}>Add New Note</Button>
-
-                <Modal
-                    isOpen={modal}
-                    toggle={handleOpen}
-                    className="noteModal">
-                    <Form
-                    //   onSubmit={handleAddNoteClick}
-                    >
-                        <FormGroup>
-                            <ModalHeader className=" border-0"
-                                // toggle={handleClose} 
-                                close={closeBtn}>
-                                Add New Note
-                            </ModalHeader>
-                            <ModalBody className="text-left border-0">
-                                <p className="modal-label">Please enter your notes</p>
-                                <Input
-                                    required autoFocus
-                                    type="textarea"
-                                    className="form-control"
-                                    style={{
-                                        height: "10rem"
-                                    }}
-                                    onChange={
-                                        (evt) => {
-                                            const copy = { ...note }
-                                            copy.description = evt.target.value
-                                            addNote(copy)
-                                        }
-                                    }
-                                >
-                                </Input>
-                            </ModalBody>
-                        </FormGroup>
-                    </Form>
-                    <ModalFooter className="modal-footer border-0">
-                        <Button className="btn_secondary modal-btn" onClick={handleClose}>
-                            Cancel
-                        </Button>
-                        &nbsp;&nbsp;
-                        <Button className="btn btn_primary modal-btn" onClick={handleAddNoteClick}
-                        >Save Note</Button>
-
-                    </ModalFooter>
-
-                </Modal>
-            </div>
-            {/* Modal Form */}
-
-            <p></p>
-            Notes:
-            <div>
-                {
-                    applyanceId ?
-                        notes.map(
-                            (note) => {
-                                return <div key={note.id} className="note">
-                                    {note.description}
-                                </div>
-                            }
-                        )
-                        : ""
-                }
-
-            </div>
-
-
-        </section>
-    </article>)
+    )
 }
 

@@ -1,11 +1,11 @@
 import { Outlet, Route, Routes, Link } from "react-router-dom"
-import { ApplyanceForm } from "../applyances/ApplyanceForm"
 import { ApplyanceContainer } from "../applyances/ApplyanceContainer"
 import { ApplyanceDetails } from "../applyances/ApplyanceDetails"
 import { HomePage } from "../home/HomePage"
 import { MyApplyanceContainer } from "../myApplyances/MyApplyanceContainer"
 import { MyApplyanceDetails } from "../myApplyances/MyApplyanceDetails"
 import { ApplyanceEdit } from "../applyances/ApplyanceEdit"
+import { ApplyanceCreate } from "../applyances/ApplyanceCreate"
 
 
 export const ApplicationViews = () => {
@@ -36,7 +36,7 @@ export const ApplicationViews = () => {
                 <Route path="all-applyances-edit/:myApplyanceId" element={<ApplyanceEdit />} />
 
                 {/* Add New ApplYance Page */}
-                <Route path="new-applyance" element={<ApplyanceForm />} />
+                <Route path="new-applyance" element={<ApplyanceCreate />} />
 
             </Route>
         </Routes>
