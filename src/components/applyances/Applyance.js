@@ -1,6 +1,8 @@
 // Child of ApplyanceList.js
+// Parent of ApplyanceJSX
 import { Link } from "react-router-dom"
 import "./Applyances.css"
+import { ApplyanceJSX } from "./ApplyanceJSX"
 
 // Receives several props from ApplianceList.js
 export const Applyance = ({ id, makeModel, picture, manual, userId, getAllApplyances, applyanceObject, location }) => {
@@ -47,27 +49,15 @@ export const Applyance = ({ id, makeModel, picture, manual, userId, getAllApplya
 
     // JSX to render what displays on the all-applyances website (http://localhost:3000/all-applyances)
     return (
-        <section className="applyanceSection">
-            <div>
-                <header>
-                    <Link to={`/all-applyances/${id}`}>{makeModel}</Link>
-                </header>
-                <div className="tag">{location}</div>
-                <div className="manualLink">
-                    <Link to={manual}>Link to Manual</Link>
-                </div>
-            </div>
-
-            <div className="picture">
-                <img className="img" src={picture} alt="appliance"/>
-            </div>
-
-            <footer>
-                {editButton()}
-                {deleteButton()}
-            </footer>
-
-        </section>
+        <ApplyanceJSX 
+        id={id}
+        makeModel={makeModel}
+        location={location}
+        manual={manual}
+        picture={picture}
+        editButton={editButton}
+        deleteButton={deleteButton}
+        />
     )
 }
 

@@ -216,7 +216,7 @@ Added Test and test (no additional data)
     test details page
         Delete test and test is also deleted
 Added Test and test (with additional data)
-    It doesn't bug out if additional data is added
+    It doesn't bug out if all data is added
 Need validation to prevent buggy deletes
 Added validation, and now I'm not having the bug anymore
 <!-- Status - Bug squashed -->
@@ -224,6 +224,16 @@ Added validation, and now I'm not having the bug anymore
 <!-- CSS - Make it purty -->
 Clean up some warnings
 added font
+<!-- Status - uploaded to Github -->
+
+
+<!-- Refactor code  -->
+Create form, edit form, and form on separate components to reuse the "form" portion
+Make sure the ApplicationViews are updated
+<!-- Status - seems to be working -->
+Test all methods
+Verify all edit's are updated
+<!-- Status - It alls seems to be working -->
 
 
 
