@@ -125,7 +125,7 @@ I followed along with the Honey Rae's and Kandy Korner's curriculum for the most
 ### Planning Links
 Wireframe: 
 
-<img src="./assets/ApplYancesWireframe.jpg" alt=""
+<img src="./assets/ApplYancesWireframe.jpg" alt="">
 
 ERD: 
 
