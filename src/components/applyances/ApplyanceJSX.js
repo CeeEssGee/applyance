@@ -12,7 +12,7 @@ export const ApplyanceJSX = ({ id, makeModel, location, manual, picture, editBut
                 outline
                 style={{
                     width: '25rem',
-                    height: '40rem'
+                    // height: '40rem'
                 }}
             >
                 <section className="applyanceSection">

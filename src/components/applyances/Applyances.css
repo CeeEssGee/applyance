@@ -62,16 +62,16 @@ button:hover, .notesButton:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .detailsArticle {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content:baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
     flex-wrap: wrap;
 }
 
 .applyanceNotes {
     margin: 10px;
 }
-
