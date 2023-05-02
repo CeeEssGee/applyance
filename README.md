@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# ApplYances
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ApplYances is an app where a family can keep information about their appliances and electronics in one place, making the manual and details easy to find. 
 
-## Available Scripts
+## Who is it for?
 
-In the project directory, you can run:
+Anyone and everyone sharing a living space.
 
-### `npm start`
+### Why do I need it?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Have you ever had an error code pop up on your fancy new washing machine at the worst possible time? When was the last time the filter on the dishwasher was cleaned? Did you even *know* that dishwashers had filters that needed to be cleaned? Yeah - me neither! 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This app is here to help! It's your one-stop-shop to keeping all the digital manuals to your appliances and electronics in one place. In addition, you can add warranty information, maintenance details, purchase location and price, and any other details to the Notes section so you'll always have everything together without tearing your house apart or searching the internet. 
 
-### `npm test`
+### Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Git](https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white) ![JSON Server](https://img.shields.io/badge/JSON_Server%20-%232a2e2a.svg?&style=for-the-badge&logo=JSON&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/VSCode%20-%23007ACC.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-### `npm run build`
+### Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*First, a note about authentication...*
+This application uses mock authentication which is purely for demonstration purposes. Therefore the login code written here is completely insecure and would never be implemented in a professional application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once the site launches, register by clicking on the "Not a memeber yet?" link.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Fill in the required information on the form. 
+    Admins and users can add notes to any appliance
+    Users can edit and delete only appliances they have added
+    Admins can edit and delete all appliances
 
-### `npm run eject`
+Demo User Credentials
+    User:   user@demo.com
+    Admin:  admin@demo.com
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Once logged in, you will be directed to the Home page. From there, you can click on any of the navigation links. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    All ApplYances - shows a list of all appliances
+        includes a Search Bar - allows the user to enter search terms and displays all appliances that includes the search terms in the Make and Model (Name)
+    My ApplYances - shows a list of appliances this logged in user has added
+        includes a Search Bar - allows the user to enter search terms and displays all appliances that includes the search terms in the Make and Model (Name)
+    Add New ApplYance - displays a form to add a new appliance
+    Logout - logs out of the site
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    The linked Make and Model (Name) of each appliance will take you to a detailed view of that appliance, which shows the Owner, Model Number, Serial Number, and Notes (plus Add a Note button)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Demo of the Application
+<!-- Insert demo here -->
 
-## Learn More
+## To test the functionality:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# As an Admin:
+1.  Click on All ApplYances:
+        Verify you can Edit and Delete every appliance in the list
+        Verify you can view the Manual by clicking the link
+2.  Click on the Make and Model (Name) of an Applyance to navigate to the detailed view
+        Verify you can Edit and Delete on the detailed view
+        Verify you can view the Manual by clicking the link
+        Verify you can Add New Note
+        Verify you can view Notes
+3. Click on My ApplYances
+        Verify the listed appliances were added by the logged-in user
+        Verify you can Edit and Delete every appliance in the list
+        Verify you can view the Manual by clicking the link
+4.  Click on the Make and Model (Name) of an Applyance from the MyApplYance list to navigate to the detailed view
+        Verify you can Edit and Delete on the detailed view
+        Verify you can view the Manual by clicking the link
+        Verify you can Add New Note
+        Verify you can view Notes
+5.  Click on Add New ApplYance
+        Verify you can fill out all the fields to add a new appliance
+        Verify that the app will not let you add a new appliance without filling out all of the fields and uploading a picture
+        Verify the new appliance shows in the My ApplYances list and that the Edit and Delete button show
+6.  Click on the Logout link
+        Verify that the Login page shows
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# As a User:
+1.  Click on All ApplYances:
+        Verify you can Edit and Delete only appliances the logged-in user has added
+        Verify you can view the Manual by clicking the link
+2.  Click on the Make and Model (Name) of an Applyance to navigate to the detailed view
+        Verify you can Edit and Delete an appliance the logged-in user has added on the detailed view
+        Verify that you do not see the Edit and Delete button on an appliance that someone else has added
+        Verify you can view the Manual by clicking the link
+        Verify you can Add New Note
+        Verify you can view Notes
+3. Click on My ApplYances
+        Verify the listed appliances were added by the logged-in user
+        Verify you can Edit and Delete every appliance in the list
+        Verify you can view the Manual by clicking the link
+4.  Click on the Make and Model (Name) of an Applyance from the MyApplYance list to navigate to the detailed view
+        Verify you can Edit and Delete on the detailed view
+        Verify you can view the Manual by clicking the link
+        Verify you can Add New Note
+        Verify you can view Notes
+5.  Click on Add New ApplYance
+        Verify you can fill out all the fields to add a new appliance
+        Verify that the app will not let you add a new appliance without filling out all of the fields and uploading a picture
+        Verify the new appliance shows in the My ApplYances list and that the Edit and Delete button show
+6.  Click on the Logout link
+        Verify that the Login page shows
 
-### Code Splitting
+### Difficulties and Challenges
+The biggest challenges I ran into were with Cloudinary and with my modal using Reactstrap. Both were new to me, and I spent way too many hours trying to figure them out on my own before raising my hand and asking for help. I also struggled with repeating my code in several places, and I went back and refactored. I feel like I'm dealing with a pile of spaghetti now, and that if I had done this at the beginning, my code would have been much neater. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Lessons Learned
+• Push to Github frequently and write smaller tickets to work on<br>
+• Hit MVP as early as possible and keep it simple - you can always build up from there with stretch goals<br>
+• If you're stuck, and you can't figure out the right question to Google, ask for help<br>
+• If you are reusing the same code, turn it into its own component and import it
 
-### Analyzing the Bundle Size
+### How the Application was Developed
+I followed along with the Honey Rae's and Kandy Korner's curriculum for the most part. <br>
+• Starter code similar to what was given for Kandy Korner<br>
+• All ApplYance List<br>
+• My ApplYance List<br>
+• Add New ApplYance Form<br>
+• ApplYance Search / My ApplYance Search<br>
+• ApplYance Details / My ApplYance Details<br>
+• Decision was made to change purchase information to model number and serial number, refactoring was done to that effect<br>
+• Show Notes on the Details pages<br>
+• Implemented ReactStrap for the Add New Notes Modal<br>
+• Cloudinary for uploading pictures on Add New ApplYance form<br>
+• Refactoring and CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Planning Links
+Wireframe: 
 
-### Making a Progressive Web App
+<img src="/assets/ApplYancesWireframe.jpg" alt=""
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ERD: 
 
-### Advanced Configuration
+<img src="/assets/ApplYancesERD.jpg" alt="">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Created by Courtney Gulledge
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://github.com/CeeEssGee" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Courtney Gulledge GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/courtney-gulledge/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Courtney Gulledge LinkedIn" style="height: auto !important;width: auto !important;" /></a>

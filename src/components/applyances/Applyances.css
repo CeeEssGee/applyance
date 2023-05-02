@@ -75,3 +75,21 @@ button:hover, .notesButton:hover {
 .applyanceNotes {
     margin: 10px;
 }
+
+.button-delete {
+    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    margin: 5px;
+}
+
+.button-edit {
+    float: left;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    margin: 5px;
+}

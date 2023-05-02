@@ -23,6 +23,7 @@ export const DetailsJSX = ({ applyance, editButton, deleteButton, handleOpen, se
                                 <div className="manualLink">
                                     <Link to={applyance.manual}>Link to Manual</Link>
                                 </div>
+                                <div className="tag">{applyance?.tag?.location}</div>
                             </CardSubtitle>
                         </CardBody>
 
@@ -35,7 +36,6 @@ export const DetailsJSX = ({ applyance, editButton, deleteButton, handleOpen, se
                                 <div>Owner:  {applyance?.user?.firstName}</div>
                                 <div>Model Number:  {applyance.modelNumber}</div>
                                 <div>Serial Number:  {applyance.serialNumber}</div>
-                                <div className="tag">{applyance?.tag?.location}</div>
                             </div>
                         </CardBody>
                         <footer>

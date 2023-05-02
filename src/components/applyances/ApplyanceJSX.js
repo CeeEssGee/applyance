@@ -21,14 +21,14 @@ export const ApplyanceJSX = ({ id, makeModel, location, manual, picture, editBut
                                 <Link to={`/all-applyances/${id}`}>{makeModel}</Link>
                             </header>
                         </CardHeader>
-                        <img className="picture" src={picture} alt="appliance" />
-                        <CardBody>
                     <div>
                         <div className="tag">{location}</div>
                         <div className="manualLink">
                             <Link to={manual}>Link to Manual</Link>
                         </div>
                     </div>
+                        <img className="picture" src={picture} alt="appliance" />
+                        <CardBody>
 
                     <div className="picture">
                     </div>
