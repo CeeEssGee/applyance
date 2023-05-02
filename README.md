@@ -558,7 +558,7 @@ I followed along with the Honey Rae's and Kandy Korner's curriculum for the most
 
 #### Proposal:
 
-<a href="https://docs.google.com/document/d/1_2AHH5Ov9j3kx0sO7VPmUPp0Ljtjxib6I7lv8t0l4Wc/edit?usp=sharing" target="_blank" Link to Capstone Proposal ></a>
+<a href="https://docs.google.com/document/d/1_2AHH5Ov9j3kx0sO7VPmUPp0Ljtjxib6I7lv8t0l4Wc/edit?usp=sharing" target="_blank">Link to Capstone Proposal</a>
 
 ### Created by: Courtney Gulledge
 
