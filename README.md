@@ -122,7 +122,7 @@ I followed along with the Honey Rae's and Kandy Korner's curriculum for the most
 • Cloudinary for uploading pictures on Add New ApplYance form<br>
 • Refactoring and CSS
 
-### Planning Links
+### Planning
 Wireframe: 
 
 ![ApplYancesWireframe](https://user-images.githubusercontent.com/116823138/235769947-e6b10e1b-2e05-40d2-b1b3-b917a028d58e.jpg)
