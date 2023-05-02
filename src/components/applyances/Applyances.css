@@ -32,7 +32,7 @@ margin-bottom: auto;
 }
 
 .tag {
-    background: #BA3B46;
+    background: #a80874;
     color: #FFEEDB;
     border-radius: 5px;
     text-align: center;
@@ -45,7 +45,15 @@ footer {
     justify-content: space-between;
 }
 
-button {
-    background: #ED9B40;
-    color: black
+
+button, .notesButton {
+    background: #5ef38c;
+    color: black;
+    border-radius: 5px;
 }
+
+button:hover, .notesButton:hover {
+    background-color: #2B9720; 
+    color: white;
+}
+
