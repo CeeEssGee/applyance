@@ -28,7 +28,7 @@ Fill in the required information on the form.
     Users can edit and delete only appliances they have added
     Admins can edit and delete all appliances
 
-Demo User Credentials
+Demo User Credentials<br>
     User:   user@demo.com
     Admin:  admin@demo.com
 
