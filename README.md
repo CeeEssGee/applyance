@@ -125,11 +125,11 @@ I followed along with the Honey Rae's and Kandy Korner's curriculum for the most
 ### Planning Links
 Wireframe: 
 
-<img src="https://www.figma.com/file/7KA2OJLmneo7iHKaGsBAG5/ApplYance?node-id=0-1&t=X7LqQLWEN78ktAFp-0" alt=""></img>
+![ApplYancesWireframe](https://user-images.githubusercontent.com/116823138/235769947-e6b10e1b-2e05-40d2-b1b3-b917a028d58e.jpg)
 
 ERD: 
 
-![image](https://user-images.githubusercontent.com/116823138/235769784-a1641acc-544a-4146-be47-636a8e12c319.png)
+![ApplYancesERD](https://user-images.githubusercontent.com/116823138/235769916-94dd049b-f9ff-49bf-b0c1-9b6958477aba.jpg)
 
 #### Created by Courtney Gulledge
 
