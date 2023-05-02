@@ -10,7 +10,8 @@ header {
 
 img {
 max-width: 300px;
-margin-bottom: auto;
+margin-bottom: 20px;
+margin-top: 20px;
 }
 
 .applyanceArticle {
@@ -21,7 +22,7 @@ margin-bottom: auto;
 
 .applyanceSection {
     margin: 20px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 10px;
     display: flex;
     max-width: 350px;
@@ -55,5 +56,22 @@ button, .notesButton {
 button:hover, .notesButton:hover {
     background-color: #2B9720; 
     color: white;
+}
+
+.my-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detailsArticle {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content:baseline;
+    flex-wrap: wrap;
+}
+
+.applyanceNotes {
+    margin: 10px;
 }
 
