@@ -19,7 +19,6 @@ This app is here to help! It's your one-stop-shop to keeping all the digital man
 ### Demo of the Application
 
 Click <a href="https://www.loom.com/share/844fc1af71454794905a3ffb41739265">here</a> to view a demo of the site
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/844fc1af71454794905a3ffb41739265" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Getting Started
 
