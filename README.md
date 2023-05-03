@@ -19,7 +19,6 @@ This app is here to help! It's your one-stop-shop to keeping all the digital man
 ### Demo of the Application
 
 
-https://user-images.githubusercontent.com/116823138/235941628-6f6fac7e-ed9b-491b-a94f-b4e11d9ed0a4.mp4
 
 
 Click <a href="https://www.loom.com/share/844fc1af71454794905a3ffb41739265">here</a> if the preview demo video does not load automatically 
