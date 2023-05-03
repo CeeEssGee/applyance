@@ -2,7 +2,13 @@ import { Link } from 'react-router-dom';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Card, CardHeader, CardSubtitle, CardBody, ListGroupItem, ListGroup } from 'reactstrap';
 
 
-export const DetailsJSX = ({ applyance, editButton, deleteButton, handleOpen, setModal, addNote, handleAddNoteClick, modal, closeBtn, note, handleClose, applyanceId, notes }) => {
+export const DetailsJSX = ({ applyance, editButton, deleteButton, handleOpen, addNote, handleAddNoteClick, modal, closeBtn, note, handleClose, applyanceId, notes }) =>
+ {
+
+
+   
+
+
     return (
         <>
             <article className="detailsArticle">
@@ -112,6 +118,7 @@ export const DetailsJSX = ({ applyance, editButton, deleteButton, handleOpen, se
                                                     <div key={note.id} className="note">
                                                         {note.description}
                                                     </div>
+                                                  
                                                 </ListGroupItem>
                                             </>
                                         }

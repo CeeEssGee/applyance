@@ -5,7 +5,7 @@ import { MyApplyance } from "./MyApplyance"
 import "../applyances/Applyances.css"
 
 // MyApplyanceList component receives the mySearchTermState prop from the parent and uses it to filter the list of applyances that it displays. If empty, it displays all applyances. Otherwise, it displays a filtered list based on the whether the make/model includes the mySearchTerms string
-export const MyApplyanceList = ({ mySearchTermState }) => {
+export const MyApplyanceList = ({ searchTermState }) => {
 
     // get apply user object out of local storage as a string
     const localApplyUser = localStorage.getItem("apply_user")
@@ -61,11 +61,11 @@ export const MyApplyanceList = ({ mySearchTermState }) => {
     useEffect(
         () => {
             const mySearchedApplyances = applyances.filter(applyance => {
-                return applyance.makeModel.toLowerCase().includes(mySearchTermState.toLowerCase())
+                return applyance.makeModel.toLowerCase().includes(searchTermState.toLowerCase())
             })
             setFiltered(mySearchedApplyances)
         },
-        [mySearchTermState] //  missing dependency: 'applyances'. Either include it or remove the dependency array, when added all applyances
+        [searchTermState] //  missing dependency: 'applyances'. Either include it or remove the dependency array, when added all applyances
     )
 
 

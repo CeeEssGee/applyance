@@ -58,6 +58,8 @@ export const MyApplyance = ({ id, makeModel, picture, manual, userId, getAllAppl
     location={location}
     editButton={editButton}
     deleteButton={deleteButton}
+    applyUserObject={applyUserObject}
+    applyanceObject={applyanceObject}
     />
     </>
     )
