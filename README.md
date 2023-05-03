@@ -469,7 +469,8 @@ Logout - logs out of the site
 The linked Make and Model (Name) of each appliance will take you to a detailed view of that appliance, which shows the Owner, Model Number, Serial Number, and Notes (plus Add a Note button)
 
 ### Demo of the Application
-<!-- Insert demo here -->
+
+Click <a href="https://www.loom.com/share/844fc1af71454794905a3ffb41739265">here</a> to view a demo of the site
 
 ### To test the functionality:
 
