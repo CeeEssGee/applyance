@@ -39,7 +39,6 @@ This application uses mock authentication which is purely for demonstration purp
 
 You can copy and paste sample data to get an idea of how this app can be used
 
-#### Sample Data ####
 <details><summary>Click for Sample Data</summary>
 <p>
 
