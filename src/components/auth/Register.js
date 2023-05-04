@@ -11,6 +11,7 @@ export const Register = (props) => {
         email: "",
         firstName: "",
         lastName: "",
+        password: "",
         isAdmin: false
     })
 
@@ -87,13 +88,13 @@ export const Register = (props) => {
                         placeholder="Email address" required />
                 </fieldset>
 
-                {/* Update this fieldset for password
+                {/* Added this fieldset for password */}
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
+                    <label htmlFor="password"> Password </label>
                     <input onChange={updateUser}
-                        type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
-                </fieldset> */}
+                        type="password" id="password" className="form-control"
+                        placeholder="Password" required />
+                </fieldset> 
 
                 <fieldset>
                     <input onChange={(evt) => {
