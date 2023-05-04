@@ -243,6 +243,10 @@ Added Cards to the JSX for the ApplyanceJSX and DetailsJSX
 Notes is to the right
 ### Commit and merge
 
+## Password
+Password functionality added to Login and Register
+### Status - it works!
+
 
 
 # WANT-TO-DO'S
