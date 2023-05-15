@@ -10,11 +10,6 @@ Serie SC04-A
 5826-231-A127
 https://assets.wsimgs.com/wsimgs/ab/images/dp/wcm/202314/0752/img32o.jpg
 
-Microsoft Xbox Series X
-https://drive.google.com/file/d/1m4V5q7wkvhfz6NnmsxgWDeG_zSb5IOCX/view?usp=sharing
-N/A
-N/A
-image in downloads folder
-
-user@demo.com
-admin@demo.com
+courtney@g.com
+sean@g.com
+demo
