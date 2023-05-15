@@ -37,9 +37,8 @@ export const ApplyanceList = ({ searchTermState }) => {
     // useEffect hook is used to update filteredApplyances when the searchTermState changes. Filters the applyances array based on teh search term u sing the filter method and sets the filtered array to filtererdApplyances using the setFiltered function
     useEffect(
         () => {
-            const searchedApplyances = applyances.filter(applyance => {
-                return applyance.makeModel.toLowerCase().includes(searchTermState.toLowerCase())
-            })
+            const searchedApplyances = applyances.filter(applyance =>
+                applyance.makeModel.toLowerCase().includes(searchTermState.toLowerCase())) 
             setFiltered(searchedApplyances)
         },
         [searchTermState, applyances] // missing dependency: 'applyances'. Either include it or remove the dependency array

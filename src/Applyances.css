@@ -14,7 +14,7 @@ select,
 textarea {
   color: #404040;
   font-family: 'Agency FB', "Comfortaa", Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
   letter-spacing: 1.25px;
 }
@@ -40,6 +40,6 @@ p {
 .navbar__item {
   font-family: 'Agency FB Bold', "Patua One", serif;
   letter-spacing: 2px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
