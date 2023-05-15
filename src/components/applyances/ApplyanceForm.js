@@ -48,7 +48,6 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
         // validation to fill out all form fields
         noValidate
         >
-            <h2 className="applyanceForm__title">New ApplYance</h2>
 
             {/* fieldset for makeModel */}
             <fieldset>
@@ -59,7 +58,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         required 
                         type="text"
                         className="form-control"
-                        placeholder="(GE Dishwasher)"
+                        placeholder="Make and Model (GE Dishwasher)"
                         value={applyance.makeModel}
                         onChange={
                             (evt) => {
@@ -70,6 +69,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         } />
                 </div>
             </fieldset>
+            <p></p>
             
             {/* fieldset for manual */}
             <fieldset>
@@ -90,6 +90,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         } />
                 </div>
             </fieldset>
+            <p></p>
 
             {/* fieldset for tagId */}
             <fieldset>
@@ -106,7 +107,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                                 update(copy)
                             }
                         }
-                    ><option value="0">Select in dropdown</option>
+                    ><option value="0">Select location in dropdown</option>
                         {
                             tags.map(
                                 (tag) => {
@@ -121,6 +122,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                     </select>
                 </div>
             </fieldset>
+            <p></p>
 
             {/* fieldset for modelNumber */}
             <fieldset>
@@ -130,7 +132,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         required 
                         type="text"
                         className="form-control"
-                        placeholder="(N/A if not applicable)"
+                        placeholder="Model Number (N/A if not applicable)"
                         value={applyance.modelNumber}
                         onChange={
                             (evt) => {
@@ -141,6 +143,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         } />
                 </div>
             </fieldset>
+            <p></p>
 
             {/* fieldset for serial number */}
             <fieldset>
@@ -150,7 +153,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         required 
                         type="text"
                         className="form-control"
-                        placeholder="(N/A if not applicable)"
+                        placeholder="Serial Number (N/A if not applicable)"
                         value={applyance.serialNumber}
                         onChange={
                             (evt) => {
@@ -161,6 +164,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         } />
                 </div>
             </fieldset>
+            <p></p>
 
             {/* fieldset for picture */}
             <fieldset>
@@ -181,6 +185,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                         }
                 </div>
             </fieldset>
+            <p></p>
 
             <button
             type="submit"
