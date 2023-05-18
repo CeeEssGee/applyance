@@ -21,7 +21,7 @@ This app is here to help! It's your one-stop-shop to keeping all the digital man
 
 
 
-Click <a href="[https://www.loom.com/share/844fc1af71454794905a3ffb41739265](https://www.loom.com/share/6120ad8e7f51499296ffe0440a12d9e4)">here</a> for a demo of the website
+Click <a href="https://www.loom.com/share/844fc1af71454794905a3ffb41739265">here</a> for a demo of the website
 
 ### Getting Started
 
