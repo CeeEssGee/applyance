@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import "./Applyances.css"
+import { cloud_name, preset_key } from "../../_env";
 
 
 export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
 
- 
+
     // ***** Cloudinary code
     const UploadWidget = (clickEvent) => {
         clickEvent.preventDefault()
         let widget = window.cloudinary.createUploadWidget({
-            cloudName: "dq4w2zwr2",
-            uploadPreset: "fe_capstone"
-        }, 
+            cloudName: cloud_name,
+            uploadPreset: preset_key
+        },
             (error, result) => {
                 if (!error && result && result.event === "success") {
                     console.log(result.info.url)
@@ -20,33 +21,33 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                     update(copy)
                 }
             });
-            widget.open()
-        }
+        widget.open()
+    }
     // ***** End Cloudinary code
 
-     // useState hook to observe the initial state (tags) and to update the state (setTags)
-     const [tags, setTags] = useState([])
+    // useState hook to observe the initial state (tags) and to update the state (setTags)
+    const [tags, setTags] = useState([])
 
-     // useEffect hook that fetches the tags sorted by location so they will show in alphabetical order
-     useEffect(
-         () => {
-             fetch(`http://localhost:8088/tags?_sort=location`)
-                 .then(response => response.json())
-                 .then((tagArray) => {
-                     setTags(tagArray)
-                 })
-         },
-         []
-     )
- 
-  
+    // useEffect hook that fetches the tags sorted by location so they will show in alphabetical order
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/tags?_sort=location`)
+                .then(response => response.json())
+                .then((tagArray) => {
+                    setTags(tagArray)
+                })
+        },
+        []
+    )
+
+
 
     // JSX to render what displays when clicking the Add New Applyance link in the NavBar (http://localhost:3000/new-applyance)
     return (
-        <form 
-        className="applyanceForm"
-        // validation to fill out all form fields
-        noValidate
+        <form
+            className="applyanceForm"
+            // validation to fill out all form fields
+            noValidate
         >
 
             {/* fieldset for makeModel */}
@@ -55,7 +56,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                     <label htmlFor="makeModel">Make and Model: </label>
                     <input
                         autoFocus
-                        required 
+                        required
                         type="text"
                         className="form-control"
                         placeholder="Make and Model (GE Dishwasher)"
@@ -70,13 +71,13 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                 </div>
             </fieldset>
             <p></p>
-            
+
             {/* fieldset for manual */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="manual">Manual: </label>
                     <input
-                        required 
+                        required
                         type="text"
                         className="form-control"
                         placeholder="Enter URL to Manual"
@@ -97,7 +98,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                 <div className="form-group">
                     <label htmlFor="tagId">Location in the Home: </label>
                     <select id="tagId"
-                        required 
+                        required
                         className="form-control"
                         value={applyance.tagId}
                         onChange={
@@ -129,7 +130,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                 <div className="form-group">
                     <label htmlFor="modelNumber">Model Number: </label>
                     <input
-                        required 
+                        required
                         type="text"
                         className="form-control"
                         placeholder="Model Number (N/A if not applicable)"
@@ -150,7 +151,7 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
                 <div className="form-group">
                     <label htmlFor="serialNumber">Serial Number: </label>
                     <input
-                        required 
+                        required
                         type="text"
                         className="form-control"
                         placeholder="Serial Number (N/A if not applicable)"
@@ -168,27 +169,27 @@ export const ApplyanceForm = ({ applyance, update, handleSaveButtonClick }) => {
 
             {/* fieldset for picture */}
             <fieldset>
-                    <div className="form-group">
-                        <button
-                            required
-                            onClick={(clickEvent) => UploadWidget(clickEvent)}
-                        >Upload Picture</button>                    
-                </div>   
+                <div className="form-group">
+                    <button
+                        required
+                        onClick={(clickEvent) => UploadWidget(clickEvent)}
+                    >Upload Picture</button>
+                </div>
                 <div className="imagePreview">
-                        {
-                            applyance.picture !== ""
+                    {
+                        applyance.picture !== ""
                             ? <>
-                            <div><img src={applyance.picture} ></img>
-                            </div>
+                                <div><img src={applyance.picture} ></img>
+                                </div>
                             </>
                             : <>(Image will preview here)</>
-                        }
+                    }
                 </div>
             </fieldset>
             <p></p>
 
             <button
-            type="submit"
+                type="submit"
                 // References the handleSaveButtonClick function above
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
